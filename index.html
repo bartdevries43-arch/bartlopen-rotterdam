@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Rotterdam 3:30 (Bart & Michael) · bartlopen</title>
     <meta name="description" content="Het schema van Bart en Michael: in 21 weken samen onder 3:30 in Rotterdam, met Bart als pacer." />
-    <meta name="theme-color" content="#0a0a0b" />
+    <meta name="theme-color" content="#10141a" />
     <!-- Social preview (WhatsApp, Insta, etc.) -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="bartlopen Run Coach" />
     <meta property="og:title" content="Rotterdam 3:30, Bart en Michael" />
     <meta property="og:description" content="Het schema van Bart en Michael: in 21 weken samen onder 3:30 in Rotterdam, met Bart als pacer." />
     <meta property="og:url" content="https://bartdevries43-arch.github.io/bartlopen-rotterdam/" />
-    <meta property="og:image" content="https://bartdevries43-arch.github.io/bartlopen-rotterdam/bartlopen-runcoach.png?v=3" />
-    <meta property="og:image:secure_url" content="https://bartdevries43-arch.github.io/bartlopen-rotterdam/bartlopen-runcoach.png?v=3" />
+    <meta property="og:image" content="https://bartdevries43-arch.github.io/bartlopen-rotterdam/bartlopen-runcoach.png?v=4" />
+    <meta property="og:image:secure_url" content="https://bartdevries43-arch.github.io/bartlopen-rotterdam/bartlopen-runcoach.png?v=4" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1254" />
     <meta property="og:image:height" content="1254" />
@@ -25,7 +25,7 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Rotterdam 3:30" />
-    <link rel="stylesheet" href="styles.css?v=3" />
+    <link rel="stylesheet" href="styles.css?v=4" />
   </head>
   <body>
     <div id="splash" class="splash" aria-hidden="true">
@@ -56,23 +56,22 @@
         <div id="listView">
           <!-- Hero met voortgangsring -->
           <section class="hero reveal">
-            <div class="hero-bar">
-              <img class="brand-logo" src="coach-logo.png" alt="bartlopen · Run Coach" />
-              <p id="heroGreeting" class="hero-greeting"></p>
-            </div>
+            <div class="hero-glow" aria-hidden="true"></div>
+            <img class="brand-logo" src="coach-logo.png" alt="bartlopen · Run Coach" />
             <div class="hero-top">
               <div class="hero-copy">
-                <p class="hero-kicker">Rotterdam · 11 april 2027</p>
-                <h2 id="goalText">3:30</h2>
-                <p class="hero-runner"><strong id="runnerName">Bart &amp; Michael</strong>, samen op 4:58 per km</p>
-                <p class="hero-motto" id="heroMotto"></p>
+                <p class="hero-kicker">Doel</p>
+                <h2 id="goalText">Samen onder 3:30</h2>
+                <p class="hero-runner">voor <strong id="runnerName">Bart &amp; Michael</strong></p>
+                <p class="hero-motto" id="heroMotto">Klaar voor de start? 🔥</p>
               </div>
               <div class="ring-wrap" aria-hidden="true">
                 <svg viewBox="0 0 120 120" class="ring">
                   <defs>
                     <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0" stop-color="#d2ff3a" />
-                      <stop offset="1" stop-color="#d2ff3a" />
+                      <stop offset="0" stop-color="#eaffa8" />
+                      <stop offset="0.55" stop-color="#c8ff3d" />
+                      <stop offset="1" stop-color="#46d9ff" />
                     </linearGradient>
                   </defs>
                   <circle class="ring-bg" cx="60" cy="60" r="52" />
@@ -82,25 +81,25 @@
               </div>
             </div>
             <div class="hero-subgoal">
-              <span>Volgend ijkpunt · week van 18 januari</span>
+              <span>🎯 Tussendoel · week van 18 januari</span>
               <strong>10 km tijdrit · doel onder 46:00</strong>
             </div>
-            <p class="duo-label">Wie ben jij?</p>
-            <div class="duo-switch" id="duoSwitch"></div>
+            <div class="duo-switch" id="duoSwitch">
+            </div>
           </section>
 
           <!-- Racedashboard -->
           <section class="race-dash reveal">
             <div class="dash-tile is-main"><span class="dash-val" id="dashDays">–</span><span class="dash-label" id="dashDaysLabel">dagen tot Rotterdam</span></div>
-            <div class="dash-tile"><span class="dash-val" id="dashWeeks">21</span><span class="dash-label">weken schema</span></div>
-            <div class="dash-tile"><span class="dash-val" id="dashKm">879</span><span class="dash-label">km samen</span></div>
+            <div class="dash-tile"><span class="dash-val">3:30</span><span class="dash-label">doeltijd, samen</span></div>
+            <div class="dash-tile"><span class="dash-val">4:58<small>/km</small></span><span class="dash-label">racetempo</span></div>
           </section>
 
           <!-- Strava-achtige stats -->
           <section class="stats-grid reveal">
             <div class="stat-tile"><span class="stat-val" data-count="0" id="statDone">0</span><span class="stat-label">trainingen</span></div>
             <div class="stat-tile"><span class="stat-val" data-count="0" data-suffix=" km" id="statKm">0</span><span class="stat-label">gelopen</span></div>
-            <div class="stat-tile"><span class="stat-val" data-count="0" id="statStreak">0</span><span class="stat-label">reeks</span></div>
+            <div class="stat-tile"><span class="stat-val" data-count="0" id="statStreak">0</span><span class="stat-label">reeks 🔥</span></div>
             <div class="stat-tile"><span class="stat-val" id="statWeek">0/2</span><span class="stat-label">deze week</span></div>
           </section>
 
@@ -222,6 +221,6 @@
 
     <div id="toast" class="toast" aria-live="polite"></div>
 
-    <script src="app.js?v=3"></script>
+    <script src="app.js?v=4"></script>
   </body>
 </html>
