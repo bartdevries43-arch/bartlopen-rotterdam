@@ -1086,8 +1086,9 @@ function renderDuo() {
     el.dataset.klaar = "1";
     el.innerHTML = ["Bart", "Michael"].map((naam) => `<button type="button" class="duo-btn" data-wie="${naam}">${naam}</button>`).join("");
     el.addEventListener("click", (e) => {
-      const knop = e.target.closest(".duo-btn");
-      if (!knop) return;
+      /* Ook een tik op het randje naast een knop telt: de hele balk werkt. */
+      const r = el.getBoundingClientRect();
+      const knop = e.target.closest(".duo-btn") || el.querySelector(`[data-wie="${e.clientX < r.left + r.width / 2 ? "Bart" : "Michael"}"]`);
       try { localStorage.setItem(WIE_KEY, knop.dataset.wie); } catch {}
       renderDuo();
       renderGreeting();
