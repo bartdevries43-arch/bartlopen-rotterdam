@@ -1,0 +1,31 @@
+{
+  "name": "Rotterdam 3:30 (Bart & Michael) · bartlopen Run Coach",
+  "short_name": "Rotterdam 3:30",
+  "description": "Het schema van Bart en Michael: in 21 weken samen onder 3:30 in Rotterdam, met coaching van @bartlopen.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#07080a",
+  "theme_color": "#07080a",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

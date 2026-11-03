@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Rotterdam 3:30 (Bart & Michael) · bartlopen</title>
+    <meta name="description" content="Het schema van Bart en Michael: in 21 weken samen onder 3:30 in Rotterdam, met Bart als pacer." />
+    <meta name="theme-color" content="#07080a" />
+    <!-- Social preview (WhatsApp, Insta, etc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="bartlopen Run Coach" />
+    <meta property="og:title" content="Rotterdam 3:30, Bart en Michael" />
+    <meta property="og:description" content="Het schema van Bart en Michael: in 21 weken samen onder 3:30 in Rotterdam, met Bart als pacer." />
+    <meta property="og:url" content="https://bartdevries43-arch.github.io/bartlopen-rotterdam/" />
+    <meta property="og:image" content="https://bartdevries43-arch.github.io/bartlopen-rotterdam/bartlopen-runcoach.png?v=1" />
+    <meta property="og:image:secure_url" content="https://bartdevries43-arch.github.io/bartlopen-rotterdam/bartlopen-runcoach.png?v=1" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1254" />
+    <meta property="og:image:height" content="1254" />
+    <meta property="og:image:alt" content="bartlopen Run Coach · Coach Bart" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Rotterdam 3:30" />
+    <link rel="stylesheet" href="styles.css?v=1" />
+  </head>
+  <body>
+    <div id="splash" class="splash" aria-hidden="true">
+      <div class="splash-inner">
+        <span class="splash-mark">bl</span>
+        <span class="splash-word">bartlopen</span>
+        <span class="splash-tag">RUN COACH</span>
+      </div>
+    </div>
+    <canvas id="confetti" aria-hidden="true"></canvas>
+
+    <div class="app-shell">
+      <header class="topbar">
+        <button class="icon-button hidden" id="backButton" type="button" aria-label="Terug">
+          <span aria-hidden="true">‹</span>
+        </button>
+        <div class="topbar-title">
+          <p class="kicker">Run Coach · <span id="brandHandle">@bartlopen</span></p>
+          <h1 id="appName">Onder het uur</h1>
+        </div>
+        <button class="icon-button" id="resetButton" type="button" aria-label="Voortgang wissen" title="Voortgang wissen">
+          <span aria-hidden="true">↺</span>
+        </button>
+      </header>
+
+      <main>
+        <!-- ============ HOME ============ -->
+        <div id="listView">
+          <!-- Hero met voortgangsring -->
+          <section class="hero reveal">
+            <div class="hero-glow" aria-hidden="true"></div>
+            <img class="brand-logo" src="coach-logo.png" alt="bartlopen · Run Coach" />
+            <div class="hero-top">
+              <div class="hero-copy">
+                <p class="hero-kicker">Doel</p>
+                <h2 id="goalText">Samen onder 3:30</h2>
+                <p class="hero-runner">voor <strong id="runnerName">Bart &amp; Michael</strong></p>
+                <p class="hero-motto" id="heroMotto">Klaar voor de start? 🔥</p>
+              </div>
+              <div class="ring-wrap" aria-hidden="true">
+                <svg viewBox="0 0 120 120" class="ring">
+                  <defs>
+                    <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="#eaffa8" />
+                      <stop offset="0.55" stop-color="#c8ff3d" />
+                      <stop offset="1" stop-color="#46d9ff" />
+                    </linearGradient>
+                  </defs>
+                  <circle class="ring-bg" cx="60" cy="60" r="52" />
+                  <circle class="ring-fg" id="ringFg" cx="60" cy="60" r="52" />
+                </svg>
+                <div class="ring-label"><strong id="ringPct">0%</strong><span>klaar</span></div>
+              </div>
+            </div>
+            <div class="hero-subgoal">
+              <span>🎯 Tussendoel · week van 18 januari</span>
+              <strong>10 km tijdrit · doel onder 46:00</strong>
+            </div>
+            <div class="duo-switch" id="duoSwitch">
+            </div>
+          </section>
+
+          <!-- Racedashboard -->
+          <section class="race-dash reveal">
+            <div class="dash-tile is-main"><span class="dash-val" id="dashDays">–</span><span class="dash-label" id="dashDaysLabel">dagen tot Rotterdam</span></div>
+            <div class="dash-tile"><span class="dash-val">3:30</span><span class="dash-label">doeltijd, samen</span></div>
+            <div class="dash-tile"><span class="dash-val">4:58<small>/km</small></span><span class="dash-label">racetempo</span></div>
+          </section>
+
+          <!-- Strava-achtige stats -->
+          <section class="stats-grid reveal">
+            <div class="stat-tile"><span class="stat-val" data-count="0" id="statDone">0</span><span class="stat-label">trainingen</span></div>
+            <div class="stat-tile"><span class="stat-val" data-count="0" data-suffix=" km" id="statKm">0</span><span class="stat-label">gelopen</span></div>
+            <div class="stat-tile"><span class="stat-val" data-count="0" id="statStreak">0</span><span class="stat-label">reeks 🔥</span></div>
+            <div class="stat-tile"><span class="stat-val" id="statWeek">0/2</span><span class="stat-label">deze week</span></div>
+          </section>
+
+          <!-- Volgende training -->
+          <section class="nextup reveal" id="nextUp"></section>
+
+          <!-- Route naar Rotterdam -->
+          <section class="panel reveal">
+            <h3 class="panel-head">Route naar Rotterdam</h3>
+            <div id="routeBar"></div>
+            <div class="route-list" id="routeList"></div>
+          </section>
+
+          <!-- Racekaart -->
+          <section class="panel reveal">
+            <h3 class="panel-head">Racekaart 3:30 <span class="panel-sub">doorkomsttijden</span></h3>
+            <p class="pace-intro">Voor Bart als pacer: de eerste 5 km op 5:00, daarna vlak op 4:58 per kilometer. Finish op 3:29:44.</p>
+            <div id="paceCard"></div>
+          </section>
+
+          <!-- Persoonlijke planning: vakanties en tussentijdse races -->
+          <section class="panel planning-panel reveal" id="planningPanel">
+            <div class="planning-head">
+              <div>
+                <p class="section-kicker">Flexibel schema</p>
+                <h3>Jouw planning</h3>
+                <p>Voeg een vakantie of tussentijdse race toe. Je ziet meteen wat dat voor je trainingsweek betekent.</p>
+              </div>
+              <button class="btn-add" id="togglePlanningForm" type="button" aria-expanded="false" aria-controls="planningForm">＋ Toevoegen</button>
+            </div>
+            <div id="planningList" class="planning-list"></div>
+            <form id="planningForm" class="planning-form hidden">
+              <div class="form-grid">
+                <label>Type
+                  <select id="planType">
+                    <option value="race">🏁 Tussentijdse race</option>
+                    <option value="vacation">🌴 Vakantie</option>
+                    <option value="rest">🩹 Rust / blessure</option>
+                  </select>
+                </label>
+                <label>Naam
+                  <input id="planTitle" type="text" maxlength="60" placeholder="bv. 10 km Rotterdam" required />
+                </label>
+                <label>Vanaf
+                  <input id="planStart" type="date" required />
+                </label>
+                <label>Tot en met
+                  <input id="planEnd" type="date" />
+                </label>
+                <label class="full">Notitie
+                  <textarea id="planNote" rows="2" maxlength="180" placeholder="Wat wil je onthouden?"></textarea>
+                </label>
+              </div>
+              <div class="planning-actions">
+                <button class="btn-primary" type="submit">Bewaar in schema</button>
+                <button class="btn-ghost" id="cancelPlanning" type="button">Annuleren</button>
+              </div>
+            </form>
+          </section>
+
+          <!-- Weekvolume-grafiek -->
+          <section class="panel reveal">
+            <h3 class="panel-head">Weekvolume <span class="panel-sub">kilometers · gepland · gedaan</span></h3>
+            <div class="chart" id="volumeChart"></div>
+          </section>
+
+          <!-- Tempozones -->
+          <section class="panel reveal">
+            <h3 class="panel-head">Tempozones <span class="panel-sub">afgestemd op 3:30</span></h3>
+            <div class="zones" id="zonesList"></div>
+          </section>
+
+          <!-- Schema -->
+          <section class="weeks">
+            <h3 class="phase-head reveal">Het schema · 24 weken</h3>
+            <div id="weeksList"></div>
+          </section>
+
+          <!-- Badges -->
+          <section class="badges">
+            <h3 class="phase-head reveal">Badges</h3>
+            <div class="badge-grid" id="badgeGrid"></div>
+          </section>
+
+          <!-- Advies -->
+          <section class="info">
+            <h3 class="phase-head reveal">Coach-advies</h3>
+            <div class="info-grid" id="infoList"></div>
+          </section>
+        </div>
+
+        <!-- ============ DETAIL ============ -->
+        <div id="detailView" class="hidden">
+          <p class="detail-eyebrow" id="detailTitle"></p>
+          <div id="detailBody"></div>
+        </div>
+      </main>
+
+      <footer class="foot">
+        <section class="data-card">
+          <h3 class="panel-head">Voortgang &amp; back-up</h3>
+          <p class="data-note">Je voortgang staat alleen op dit apparaat. Wis je je browsergegevens, dan is hij weg. Maak dus af en toe een back-up, dan kun je 'm altijd terugzetten of op een ander apparaat inladen.</p>
+          <div class="data-row">
+            <button class="btn-ghost" id="exportBtn" type="button">⬇︎ Back-up opslaan</button>
+            <button class="btn-ghost" id="importBtn" type="button">⬆︎ Back-up laden</button>
+            <button class="btn-ghost" id="pdfBtn" type="button">▤ Schema als PDF</button>
+            <button class="btn-ghost" id="calendarBtn" type="button">🗓 Agenda-bestand</button>
+          </div>
+          <p class="data-note data-note-bottom">Het agenda-bestand werkt met Apple Agenda, Google Agenda en Android. Kies bij PDF voor ‘Bewaar als PDF’ in het afdrukvenster.</p>
+          <p class="data-note" id="lastSaved"></p>
+          <input id="importFile" type="file" accept="application/json,.json" hidden />
+        </section>
+        <p class="foot-credit" id="footCredit">Coaching door Coach Bart · TikTok <strong>@bartlopen</strong> 🏃‍♂️</p>
+      </footer>
+    </div>
+
+    <div id="toast" class="toast" aria-live="polite"></div>
+
+    <script src="app.js?v=1"></script>
+  </body>
+</html>
