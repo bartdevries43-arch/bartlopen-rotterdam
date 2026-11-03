@@ -19,7 +19,7 @@ const CONFIG = {
   ],
   appName:    "Rotterdam 3:30",
   runner:     "Bart & Michael",
-  goal:       "Samen onder 3:30",
+  goal:       "3:30",
   startDate:  new Date(2026, 10, 16),
   storeKey:   "rotterdam330.log.v1",
   coachName:  "Coach Bart",
@@ -173,7 +173,7 @@ const PLAN = [
   { week: 6, dates: "21–27 dec", phase: "Fase 2 · Sneller en sterker", note: "Kerstweek, maar wel een mooie: zondag jullie eerste 20 km van dit blok. Daarna kan die kerststol er ook weer af.", sessions: [
     d1({ zone: "interval", km: 10, title: "5× 1 km", goal: "Snelheid volhouden", blocks: ["2,5 km rustig inlopen", "5× 1 km op 4:15–4:25/km, met 2,5 min joggen ertussen", "Rustig uitlopen tot 10 km"] }),
     d2({ zone: "duur", km: 9, title: "Rustig kerstrondje", goal: "Lekker bewegen", blocks: ["9 km op 5:40–6:10/km"] }),
-    d3({ zone: "lang", km: 20, title: "🎉 Eerste 20 km", goal: "Het eerste ijkpunt", blocks: ["20 km op 5:35–6:10/km", "Gel om de 40 min, drinken mee"], bart: "Hou het praattempo vast, ook als het lekker gaat.", michael: "Merk je dat je hele zinnen niet meer haalt? Dan gaat het te hard." }),
+    d3({ zone: "lang", km: 20, title: "Eerste 20 km", goal: "Het eerste ijkpunt", blocks: ["20 km op 5:35–6:10/km", "Gel om de 40 min, drinken mee"], bart: "Hou het praattempo vast, ook als het lekker gaat.", michael: "Merk je dat je hele zinnen niet meer haalt? Dan gaat het te hard." }),
   ]},
   { week: 7, dates: "28 dec–3 jan", phase: "Fase 2 · Sneller en sterker", recovery: true, note: "Rustweek rond oud en nieuw. En voor het eerst voelen hoe 4:58 per kilometer loopt.", sessions: [
     d1({ zone: "duur", km: 8, title: "Rustig met 4 versnellingen", goal: "Licht en soepel", blocks: ["7,5 km op 5:40–6:10/km", "4× 20 sec soepel versnellen"] }),
@@ -190,10 +190,10 @@ const PLAN = [
     d2({ zone: "doel", km: 13, title: "8 km racetempo", goal: "Racetempo aan één stuk", blocks: ["2,5 km rustig inlopen", "8 km op 4:55–5:00/km", "Rustig uitlopen tot 13 km"], bart: "Roep elke kilometer de split. Afwijken mag maximaal 3 seconden.", michael: "Ontspannen schouders, rustige ademhaling. Dit moet makkelijker gaan voelen." }),
     d3({ zone: "lang", km: 24, title: "Lange loop", goal: "Tijd op de benen", blocks: ["24 km op 5:35–6:10/km", "Gel om de 40 min, oefen met wat je op de racedag gebruikt"] }),
   ]},
-  { week: 10, dates: "18–24 jan", phase: "Fase 2 · Sneller en sterker", recovery: true, tuneup: true, tuneupTag: "Tijdrit", raceLabel: "⏱️ IJkpunt · 10 km tijdrit", raceSub: "10 km tijdrit · doel onder 46:00", note: "Rustweek met een eerste echte test. Michael onder de 46:00 is precies op schema voor 3:30.", sessions: [
+  { week: 10, dates: "18–24 jan", phase: "Fase 2 · Sneller en sterker", recovery: true, tuneup: true, tuneupTag: "Tijdrit", raceLabel: "IJkpunt · 10 km tijdrit", raceSub: "10 km tijdrit · doel onder 46:00", note: "Rustweek met een eerste echte test. Michael onder de 46:00 is precies op schema voor 3:30.", sessions: [
     d1({ zone: "duur", km: 8, title: "Rustig met 4 versnellingen", goal: "Benen fris maken", blocks: ["7,5 km op 5:40–6:10/km", "4× 20 sec soepel versnellen"] }),
     d2({ zone: "herstel", km: 6, title: "Heel rustig", goal: "Fris naar de tijdrit", blocks: ["6 km langzamer dan 6:15/km"] }),
-    d3({ zone: "tempo", kind: "Testloop", km: 13, title: "⏱️ 10 km tijdrit", goal: "IJkpunt: onder de 46:00", why: "Een eerlijke meting halverwege. 46:00 is 4:36 per km en past bij een marathon rond 3:30. Lukt het ruim, dan zitten jullie voor op schema. Lukt het net niet, dan is er nog alle tijd.", blocks: ["2 km rustig inlopen met 3 versnellingen", "10 km tijdrit: kies een vlak stuk", "1 km rustig uitlopen", "Vul de tijd van de 10 km in"], bart: "Pace hem vlak op 4:36. De laatste 2 km laat je hem los.", michael: "Dit is jouw meting. Volgen tot km 8, en dan alles eruit." }),
+    d3({ zone: "tempo", kind: "Testloop", km: 13, title: "10 km tijdrit", goal: "IJkpunt: onder de 46:00", why: "Een eerlijke meting halverwege. 46:00 is 4:36 per km en past bij een marathon rond 3:30. Lukt het ruim, dan zitten jullie voor op schema. Lukt het net niet, dan is er nog alle tijd.", blocks: ["2 km rustig inlopen met 3 versnellingen", "10 km tijdrit: kies een vlak stuk", "1 km rustig uitlopen", "Vul de tijd van de 10 km in"], bart: "Pace hem vlak op 4:36. De laatste 2 km laat je hem los.", michael: "Dit is jouw meting. Volgen tot km 8, en dan alles eruit." }),
   ]},
 
   /* ---------- Fase 3 · Marathonspecifiek ---------- */
@@ -210,7 +210,7 @@ const PLAN = [
   { week: 13, dates: "8–14 feb", phase: "Fase 3 · Marathonspecifiek", note: "Zondag de eerste 30. Vanaf nu weten jullie hoe de laatste kilometers voelen.", sessions: [
     d1({ zone: "interval", km: 13, title: "6× 1,2 km", goal: "Langer snel", blocks: ["2,5 km rustig inlopen", "6× 1,2 km op 4:20–4:30/km, met 2 min joggen ertussen", "Rustig uitlopen tot 13 km"] }),
     d2({ zone: "doel", km: 12, title: "8 km racetempo", goal: "Beheerst, want zondag is lang", blocks: ["2 km rustig inlopen", "8 km op 4:55–5:00/km", "Rustig uitlopen tot 12 km"] }),
-    d3({ zone: "lang", km: 30, title: "🎉 Eerste 30 km", goal: "Het tweede ijkpunt", blocks: ["30 km op 5:35–6:10/km", "Gel om de 35 min, drink bij elke stop"], bart: "Vanaf km 25 is het jouw moment als pacer: praten, afleiden, ritme houden.", michael: "Na km 25 mag het zwaar voelen. Blijf bij Bart, dat is de oefening." }),
+    d3({ zone: "lang", km: 30, title: "Eerste 30 km", goal: "Het tweede ijkpunt", blocks: ["30 km op 5:35–6:10/km", "Gel om de 35 min, drink bij elke stop"], bart: "Vanaf km 25 is het jouw moment als pacer: praten, afleiden, ritme houden.", michael: "Na km 25 mag het zwaar voelen. Blijf bij Bart, dat is de oefening." }),
   ]},
   { week: 14, dates: "15–21 feb", phase: "Fase 3 · Marathonspecifiek", recovery: true, note: "Rustweek. Goed slapen en de benen de tijd geven, want de zwaarste twee weken komen eraan.", sessions: [
     d1({ zone: "duur", km: 9, title: "Rustig met 4 versnellingen", goal: "Licht en soepel", blocks: ["8,5 km op 5:40–6:10/km", "4× 20 sec soepel versnellen"] }),
@@ -220,7 +220,7 @@ const PLAN = [
   { week: 15, dates: "22–28 feb", phase: "Fase 3 · Marathonspecifiek", note: "De grootste week van het blok: ruim 60 km op drie lopen, met zondag de langste loop van de hele voorbereiding.", sessions: [
     d1({ zone: "interval", km: 13, title: "4× 1,6 km", goal: "De mijl op kracht", blocks: ["2,5 km rustig inlopen", "4× 1,6 km op 4:25–4:35/km, met 3 min joggen ertussen", "Rustig uitlopen tot 13 km"] }),
     d2({ zone: "doel", km: 16, title: "12 km racetempo", goal: "Twaalf kilometer op 4:58", blocks: ["2 km rustig inlopen", "12 km op 4:55–5:00/km", "Rustig uitlopen tot 16 km"], bart: "Zo vlak als je kunt: 59:36 over de 12. Neem je racegel mee en oefen het moment.", michael: "Dit is de training die je vertrouwen geeft. Voelt het beheerst? Dan ben je op schema." }),
-    d3({ zone: "lang", km: 33, title: "🎉 33 km, de langste", goal: "De piek van jullie blok", why: "Dit is de langste loop van jullie voorbereiding. Hij staat bewust hier: zes dagen voor Michaels Hyrox in Mechelen, zodat er daarna nog ruimte is om te herstellen. Verder hoeft niet: de rest komt op de racedag.", blocks: ["33 km op 5:35–6:10/km", "Gel om de 35 min, drinken bij elke kans", "Kleding en schoenen van de racedag aan"], bart: "Hou het rustig, ook als het lekker gaat. Na km 25 is het jouw moment als pacer.", michael: "Kniepees checken: napijn de volgende ochtend? Laat het direct weten. Daarna gaat alles richting Mechelen." }),
+    d3({ zone: "lang", km: 33, title: "33 km, de langste", goal: "De piek van jullie blok", why: "Dit is de langste loop van jullie voorbereiding. Hij staat bewust hier: zes dagen voor Michaels Hyrox in Mechelen, zodat er daarna nog ruimte is om te herstellen. Verder hoeft niet: de rest komt op de racedag.", blocks: ["33 km op 5:35–6:10/km", "Gel om de 35 min, drinken bij elke kans", "Kleding en schoenen van de racedag aan"], bart: "Hou het rustig, ook als het lekker gaat. Na km 25 is het jouw moment als pacer.", michael: "Kniepees checken: napijn de volgende ochtend? Laat het direct weten. Daarna gaat alles richting Mechelen." }),
   ]},
   { week: 16, dates: "1–7 mrt", phase: "Fase 3 · Marathonspecifiek", event: { day: "za", titel: "HYROX solo Mechelen", wanneer: "zaterdag 6 maart", tekst: "Michael doet Hyrox solo in België. Daarom is deze week voor jullie allebei lichter. Zondag rust voor Michael." }, note: "Lichtere week na de piek. Michael richt zich op zaterdag, Bart houdt de kilometers vast.", sessions: [
     d1({ zone: "tempo", km: 10, title: "2× 10 min tempo", goal: "Scherp blijven, niet moe worden", blocks: ["2,5 km rustig inlopen", "2× 10 min op 4:35–4:45/km, met 3 min rustig ertussen", "Rustig uitlopen tot 10 km"], michael: "Op dinsdag kan dit nog, maar stop als de 33 km van zondag nog in je benen zit." }),
@@ -228,10 +228,10 @@ const PLAN = [
     d3({ zone: "lang", km: 20, title: "Ontspannen lange loop", goal: "Bart loopt, Michael rust", blocks: ["20 km op 5:35–6:10/km"], bart: "Deze loop je alleen. Kijk zondag even hoe Michael erbij loopt, volgende week is de CPC.", michael: "De dag na je Hyrox. Rust, of maximaal 5 km heel rustig als het echt goed voelt. Niet meer." }),
   ]},
 
-  { week: 17, dates: "8–14 mrt", phase: "Fase 3 · Marathonspecifiek", tuneup: true, tuneupTag: "CPC", raceLabel: "🎯 IJkpunt · CPC halve marathon", raceSub: "CPC Den Haag · doel onder 1:40", note: "CPC-week! Vier weken voor Rotterdam de perfecte generale, met startnummer en alles erop en eraan.", sessions: [
+  { week: 17, dates: "8–14 mrt", phase: "Fase 3 · Marathonspecifiek", tuneup: true, tuneupTag: "CPC", raceLabel: "IJkpunt · CPC halve marathon", raceSub: "CPC Den Haag · doel onder 1:40", note: "CPC-week! Vier weken voor Rotterdam de perfecte generale, met startnummer en alles erop en eraan.", sessions: [
     d1({ zone: "duur", km: 9, title: "Rustig met 4 versnellingen", goal: "Fris naar de CPC", blocks: ["8,5 km op 5:40–6:10/km", "4× 20 sec soepel versnellen"], michael: "Drie dagen na je Hyrox: zijn de benen nog zwaar, dan alleen 6 km heel rustig." }),
     d2({ zone: "doel", km: 8, title: "3× 1 km racetempo", goal: "Even voelen, verder niets", blocks: ["3 km rustig inlopen", "3× 1 km op 4:55–5:00/km, met 2 min rustig ertussen", "Rustig uitlopen tot 8 km"] }),
-    zo({ zone: "doel", km: 21.1, kind: "Wedstrijd", title: "🎯 CPC Loop Den Haag", goal: "Zondag 14 maart · onder de 1:40", why: "De belangrijkste test van het blok. 1:40 is 4:44 per km en past bij een marathon rond 3:30. Lukt dit, dan is 3:30 in Rotterdam echt haalbaar. Oefen ook alles van de racedag: ontbijt, gels, kleding en de startvak-routine.", blocks: [
+    zo({ zone: "doel", km: 21.1, kind: "Wedstrijd", title: "CPC Loop Den Haag", goal: "Zondag 14 maart · onder de 1:40", why: "De belangrijkste test van het blok. 1:40 is 4:44 per km en past bij een marathon rond 3:30. Lukt dit, dan is 3:30 in Rotterdam echt haalbaar. Oefen ook alles van de racedag: ontbijt, gels, kleding en de startvak-routine.", blocks: [
       "Rustig inlopen, 10 min plus een paar versnellingen",
       "Eerste 5 km op 4:48: drukte en bochten kosten tijd, niet jagen",
       "Dan op 4:42–4:45/km tot km 18",
@@ -242,7 +242,7 @@ const PLAN = [
   { week: 18, dates: "15–21 mrt", phase: "Fase 3 · Marathonspecifiek", note: "De laatste grote: 32 km met 12 km op racetempo. Hierna begint het afbouwen.", sessions: [
     d1({ zone: "herstel", km: 8, title: "Heel rustig na de CPC", goal: "Bijkomen", blocks: ["8 km langzamer dan 6:15/km"] }),
     d2({ zone: "tempo", km: 11, title: "2× 15 min tempo", goal: "Nog één keer scherp", blocks: ["2,5 km rustig inlopen", "2× 15 min op 4:35–4:45/km, met 3 min rustig ertussen", "Rustig uitlopen tot 11 km"] }),
-    d3({ zone: "doel", km: 32, title: "🔥 De generale: 32 km", goal: "Laatste 12 km op racetempo", why: "De belangrijkste training van het hele schema. 20 km rustig en dan 12 km op 4:58 op vermoeide benen: precies het gevoel van km 30 in Rotterdam. Lukt dit, dan weten jullie het zeker.", blocks: ["20 km op 5:35–6:00/km", "12 km op 4:55–5:00/km", "Gel om de 35 min, oefen precies je racedag", "Goed eten en goed slapen erna"], bart: "Na km 20 begint de race: 59:36 over de laatste 12, en praat hem er doorheen.", michael: "Vertrouw op Bart en blijf klein lopen. Hier leer je dat het kan." }),
+    d3({ zone: "doel", km: 32, title: "De generale: 32 km", goal: "Laatste 12 km op racetempo", why: "De belangrijkste training van het hele schema. 20 km rustig en dan 12 km op 4:58 op vermoeide benen: precies het gevoel van km 30 in Rotterdam. Lukt dit, dan weten jullie het zeker.", blocks: ["20 km op 5:35–6:00/km", "12 km op 4:55–5:00/km", "Gel om de 35 min, oefen precies je racedag", "Goed eten en goed slapen erna"], bart: "Na km 20 begint de race: 59:36 over de laatste 12, en praat hem er doorheen.", michael: "Vertrouw op Bart en blijf klein lopen. Hier leer je dat het kan." }),
   ]},
 
   /* ---------- Fase 4 · Scherp naar Rotterdam ---------- */
@@ -256,10 +256,10 @@ const PLAN = [
     d2({ zone: "doel", km: 10, title: "5 km racetempo", goal: "Even voelen", blocks: ["2,5 km rustig inlopen", "5 km op 4:55–5:00/km", "Rustig uitlopen tot 10 km"], bart: "24:50, en geen seconde sneller. Beheersing is nu de training.", michael: "Voelt dit makkelijk? Mooi, dan werkt de afbouw." }),
     d3({ zone: "lang", km: 14, title: "Laatste lange loop", goal: "Kort en ontspannen", blocks: ["14 km op 5:35–6:10/km", "Geen krachttraining meer voor de benen"] }),
   ]},
-  { week: 21, dates: "5–11 apr", phase: "Fase 4 · Scherp naar Rotterdam", taper: true, race: true, raceLabel: "🏅 Doelrace · Rotterdam", raceSub: "Marathon Rotterdam · samen onder 3:30", note: "Raceweek. Het werk is gedaan. Slapen, eten, en zondag samen over die finish.", sessions: [
+  { week: 21, dates: "5–11 apr", phase: "Fase 4 · Scherp naar Rotterdam", taper: true, race: true, raceLabel: "Doelrace · Rotterdam", raceSub: "Marathon Rotterdam · samen onder 3:30", note: "Raceweek. Het werk is gedaan. Slapen, eten, en zondag samen over die finish.", sessions: [
     d1({ zone: "doel", km: 8, title: "3× 1 km racetempo", goal: "Laatste prikkel", blocks: ["3 km rustig inlopen", "3× 1 km op 4:55–5:00/km, met 2 min rustig ertussen", "Rustig uitlopen tot 8 km"] }),
     d2({ zone: "herstel", km: 5, title: "5 km los + 4 versnellingen", goal: "Benen wakker", blocks: ["5 km heel rustig", "4× 20 sec soepel versnellen", "Doe deze uiterlijk vrijdag", "Twee dagen extra koolhydraten voor zondag"] }),
-    zo({ zone: "doel", km: 42.2, kind: "Doelrace", title: "🏁 Marathon Rotterdam", goal: "Zondag 11 april · samen onder 3:30", why: "21 weken, honderden kilometers, samen. Bart loopt vooraan, Michael volgt, en de Coolsingel wacht. Begin rustig, loop vlak, eet en drink op tijd, en laat de laatste 10 km zien wat jullie hebben opgebouwd.", blocks: [
+    zo({ zone: "doel", km: 42.2, kind: "Doelrace", title: "Marathon Rotterdam", goal: "Zondag 11 april · samen onder 3:30", why: "21 weken, honderden kilometers, samen. Bart loopt vooraan, Michael volgt, en de Coolsingel wacht. Begin rustig, loop vlak, eet en drink op tijd, en laat de laatste 10 km zien wat jullie hebben opgebouwd.", blocks: [
       "Ontbijt 3 uur voor de start, wat je geoefend hebt",
       "Eerste 5 km op 5:00: drukte en de Erasmusbrug kosten tijd, niet inhalen",
       "Daarna vlak op 4:58/km, zie de racekaart in de app",
@@ -326,9 +326,59 @@ const INFO = [
   { icon: "🏁", title: "Afbouwen en de racedag", items: [
     "De laatste drie weken loop je minder, niet langzamer. Het tempo blijft, alleen de kilometers gaan omlaag.",
     "Rotterdam staat op zondag 11 april 2027. Check de startgegevens op de site van de marathon.",
-    "Bij de start is het druk en vlak daarna komt de Erasmusbrug. Geen zigzag, geen inhaalrace: de eerste 5 km op 5:00.",
+    "Bij de start is het druk en vroeg in de race komt de Erasmusbrug. Geen zigzag, geen inhaalrace: de eerste 5 km op 5:00.",
     "Daarna vlak. Op de racekaart in de app staan alle doorkomsttijden.",
     "Bij km 30 begint de echte marathon. Daar maakt een goede pacer het verschil.",
+  ]},
+  { icon: "⏱️", title: "Racetempo op gevoel", items: [
+    "Op de racedag kan je horloge ernaast zitten: tussen de hoge gebouwen en onder de bruggen springt gps soms weg. Vertrouw daarom ook op je gevoel en de kilometerborden.",
+    "Bij 4:58 hoort: rustige ademhaling, korte zinnen kunnen nog, en het voelt in de eerste 10 km bijna te makkelijk.",
+    "Voelt racetempo in het begin zwaar? Dan zit je te hard, of je hebt te weinig hersteld.",
+    "Gebruik de racekaart: de tijd bij elke 5 km is betrouwbaarder dan het tempo op je horloge.",
+  ]},
+  { icon: "🦶", title: "Looptechniek", items: [
+    "Kijk vooruit, niet naar je voeten. Een rechte houding geeft je longen ruimte.",
+    "Laat je schouders laag en je handen los. Bij vermoeidheid gaan die als eerste omhoog.",
+    "Korte, lichte passen sparen je knieën beter dan lange stappen. Dat is ook fijn voor Michaels kniepees.",
+    "Wordt het zwaar? Maak je pas kleiner en houd je ritme vast, in plaats van harder te duwen.",
+  ]},
+  { icon: "👟", title: "Schoenen", items: [
+    "Loop de meeste kilometers op je trainingsschoenen en wissel het liefst tussen twee paar.",
+    "Raceschoenen test je op racetempo en op een lange loop. Nooit voor het eerst op de racedag.",
+    "Schoenen gaan meestal zo'n 600 tot 800 km mee. Dit schema is 879 km, dus reken op een nieuw paar in de winter.",
+    "Koop dat nieuwe paar op tijd, zodat je het voor de CPC al ingelopen hebt.",
+  ]},
+  { icon: "🌙", title: "Koud en donker lopen", items: [
+    "Dit schema loopt dwars door de winter. Een lampje en reflectie zijn geen luxe.",
+    "Trek een laag minder aan dan je denkt, en neem een muts en handschoenen mee.",
+    "Glad? Dan vervalt het tempo. Loop rustig op een veilige route of schuif de training een dag op.",
+    "Bij harde wind: eerst tegen, dan mee terug. Loop op gevoel in plaats van op je tempo.",
+  ]},
+  { icon: "📋", title: "De laatste week", items: [
+    "Maandag tot en met donderdag: normaal eten, veel slapen en zo min mogelijk op de benen.",
+    "Vrijdag en zaterdag: extra koolhydraten, zo'n 8 tot 10 gram per kilo lichaamsgewicht per dag. Pasta, rijst, brood en sportdrank.",
+    "Zaterdag: niets nieuws eten, startnummer regelen en daarna vooral zitten.",
+    "Leg zaterdagavond alles klaar: schoenen, startnummer, gels, horloge en een oud shirt voor bij de start.",
+  ]},
+  { icon: "🏁", title: "Racedag: het draaiboek", items: [
+    "Ontbijt 3 uur voor de start, precies wat je op de CPC hebt gegeten.",
+    "Op tijd bij de start, met een oud shirt dat je weg kunt gooien. Check het startvak en de starttijd vooraf op de site van de marathon.",
+    "Laatste gel vlak voor de start, en dan om de 35 minuten. Drink bij elke post een paar slokjes.",
+    "Km 0 tot 5: rustig door de drukte. Km 5 tot 30: vlak op 4:58, praten mag nog. Km 30 tot 40: alleen ritme en de volgende kilometer.",
+    "Bij km 40 mag Michael los. Dan gaat het om de laatste twee kilometer, en die kun je altijd.",
+  ]},
+  { icon: "🧠", title: "De laatste 12 km", items: [
+    "De man met de hamer komt vaak na km 30. Goed eten en een rustige eerste helft zijn de beste bescherming.",
+    "Knip het op: niet nog 12 km, maar alleen tot de volgende drinkpost.",
+    "Kies vooraf een zin die je in je hoofd herhaalt. Klein, licht, door.",
+    "Glimlachen helpt echt: het ontspant je gezicht en schouders, en het kost niets.",
+    "Dit ken je al: de generale van 32 km was precies dit gevoel, en toen liep je het ook gewoon uit.",
+  ]},
+  { icon: "🩹", title: "Als het even tegenzit", items: [
+    "Eén training gemist? Gewoon doorgaan, niet inhalen.",
+    "Een week ziek? Begin rustig opnieuw en haal niets in. Overleg dan samen of de tempo's nog kloppen.",
+    "Pijn die je loopje verandert: stoppen. Pijn die de volgende dag erger is: rust, en houdt het aan, ga dan naar de fysio.",
+    "Koorts of iets op je borst: niet lopen. Alleen een loopneus mag rustig, als je je verder goed voelt.",
   ]},
   { icon: "😴", title: "Herstel en slaap", items: [
     "Bij drie harde trainingen per week is herstel de vierde training. Zeven tot negen uur slapen doet meer dan elke extra kilometer.",
@@ -627,13 +677,13 @@ function renderSubgoal() {
   const { rw, rs, date, allesGelopen } = raceTarget();
   const d = new Date(date);
   const voorbij = allesGelopen || new Date(date).setHours(12, 0, 0, 0) < new Date().setHours(0, 0, 0, 0);
-  const soort = rw.race ? "🏁 Doelrace" : rw.finish ? "🎉 Finale" : "🎯 Tussendoel";
+  const soort = rw.race ? "Doelrace" : rw.finish ? "Finale" : "Volgend ijkpunt";
   /* Flexibele trainingen hebben geen vaste dag: dan noemen we de week. */
   const ma = dateAtDay((rw.week - 1) * 7);
   const wanneer = /^d\d+$/.test(rs.day)
     ? `week van ${ma.getDate()} ${NL_MAAND[ma.getMonth()]}`
     : `${NL_DAG[d.getDay()]} ${d.getDate()} ${NL_MAAND[d.getMonth()]}`;
-  const kop = `${voorbij ? "🎉 Gelopen" : soort} · ${wanneer}`;
+  const kop = `${voorbij ? "Gelopen" : soort} · ${wanneer}`;
   el.innerHTML = `<span>${kop}</span><strong>${rw.raceSub || rs.title.replace(/^[^\p{L}\d]+/u, "").trim()}</strong>`;
 }
 
@@ -779,7 +829,7 @@ function tagOf(w) {
   if (w.race) return `<span class="week-tag tag-race">Raceweek</span>`;
   if (w.tuneup) return `<span class="week-tag tag-tuneup">${w.tuneupTag || "Wedstrijd"}</span>`;
   if (w.recovery) return `<span class="week-tag tag-rest">Herstel</span>`;
-  if (w.taper) return `<span class="week-tag tag-taper">Taper</span>`;
+  if (w.taper) return `<span class="week-tag tag-taper">Afbouw</span>`;
   return "";
 }
 
@@ -802,13 +852,13 @@ function renderWeeks() {
       const isRaceSession = (w.race || w.tuneup || w.finish) && s.day === lastDay;
       const isToday = isoDate(sessionDate(w.week, s.day)) === todayIso;
       const raceKicker = isRaceSession
-        ? `<span class="session-race-kicker">${w.raceLabel || (w.race ? "🏅 Doelrace" : w.tuneup ? "🏁 Wedstrijd" : "🏁 Finale")}</span>`
+        ? `<span class="session-race-kicker">${w.raceLabel || (w.race ? "Doelrace" : w.tuneup ? "Wedstrijd" : "Finale")}</span>`
         : "";
       const isFlexibleSlot = /^d\d+$/.test(s.day);
       const badgeLabel = isFlexibleSlot ? s.day.slice(1) : s.dayLabel.slice(0, 2);
       return `
         <button class="session zone-${s.zone} ${isRaceSession ? "is-race-session" : ""} ${e.done ? "is-done" : ""} ${isToday ? "is-today" : ""}" data-week="${w.week}" data-day="${s.day}">
-          <span class="session-day ${isFlexibleSlot ? "is-slot" : ""}" title="${s.dayLabel}">${isRaceSession ? "<small>🏁</small>" : ""}${badgeLabel}</span>
+          <span class="session-day ${isFlexibleSlot ? "is-slot" : ""}" title="${s.dayLabel}">${badgeLabel}</span>
           <span class="session-body">
             ${raceKicker}
             <span class="session-title">${s.title}${isToday ? ' <span class="today-badge">Vandaag</span>' : ""}</span>
@@ -830,8 +880,9 @@ function renderWeeks() {
           ${w.week === cw ? `<span class="week-tag tag-now">Nu</span>` : w.week < cw ? (w.sessions.every((x) => log[sid(w.week, x.day)]?.done) ? `<span class="week-tag tag-done">✓ af</span>` : `<span class="week-tag tag-missed">gemist</span>`) : tagOf(w)}
         </header>
         ${planStrip}
-        ${w.event ? `<div class="week-event"><strong>🏋️ Michael · ${w.event.titel}</strong><span>${w.event.wanneer}</span><p>${w.event.tekst}</p></div>` : ""}
+        ${w.event ? `<div class="week-event"><strong>Michael · ${w.event.titel}</strong><span>${w.event.wanneer}</span><p>${w.event.tekst}</p></div>` : ""}
         ${w.note ? `<p class="week-note">${w.note}</p>` : ""}
+        ${WEEK_TIPS[w.week] ? `<p class="week-tip"><b>Tip</b> ${WEEK_TIPS[w.week]}</p>` : ""}
         <div class="session-list">${sess}</div>
       </article>`;
   });
@@ -857,12 +908,14 @@ function renderBadges(stats) {
 }
 
 function renderInfo() {
+  /* Open kaarten blijven open als de lijst opnieuw wordt getekend. */
+  const open = new Set([...document.querySelectorAll("#infoList details[open]")].map((d) => d.dataset.i));
+  const eerste = !document.querySelector("#infoList details");
   $("infoList").innerHTML = INFO.map((c, i) => `
-    <article class="info-card reveal" style="--i:${i}">
-      <span class="info-icon">${c.icon}</span>
-      <h4>${c.title}</h4>
+    <details class="info-card" data-i="${i}" ${(eerste && i === 0) || open.has(String(i)) ? "open" : ""}>
+      <summary><span class="info-nr">${String(i + 1).padStart(2, "0")}</span><span class="info-title">${c.title}</span></summary>
       <ul>${c.items.map((t) => `<li>${t}</li>`).join("")}</ul>
-    </article>`).join("");
+    </details>`).join("");
 }
 
 function addJumpButton() {
@@ -893,7 +946,7 @@ function renderGreeting() {
     el.className = "hero-greeting";
     copy.insertBefore(el, copy.firstChild);
   }
-  el.textContent = `${greetingWord()}, ${wieBenIk() || RUNNER} 👋`;
+  el.textContent = `${greetingWord()}, ${wieBenIk() || RUNNER}`;
 }
 function renderRecords(stats) {
   const anchor = document.querySelector(".weeks");
@@ -912,16 +965,16 @@ function renderRecords(stats) {
   const totaalMin = stats.secs ? `${Math.round(stats.secs / 60)} min` : "–";
   const rows = UNIT === "min"
     ? [
-        stats.bestPace ? ["⚡ Snelste tempo", pace] : ["✅ Trainingen gedaan", String(stats.done)],
-        ["⏱️ Langste loop", longest],
-        ["📊 Totaal gelopen", totaalMin],
-        ["🔥 Langste reeks", String(stats.streak)],
+        stats.bestPace ? ["Snelste tempo", pace] : ["Trainingen gedaan", String(stats.done)],
+        ["Langste loop", longest],
+        ["Totaal gelopen", totaalMin],
+        ["Langste reeks", String(stats.streak)],
       ]
     : [
-        ["⚡ Snelste tempo", pace || "–"],
-        ["🏔️ Verste loop", longest],
-        ["📊 Totaal gelopen", `${nlNum(Math.round(stats.km * 10) / 10)} km`],
-        ["🔥 Langste reeks", String(stats.streak)],
+        ["Snelste tempo", pace || "–"],
+        ["Verste loop", longest],
+        ["Totaal gelopen", `${nlNum(Math.round(stats.km * 10) / 10)} km`],
+        ["Langste reeks", String(stats.streak)],
       ];
   sec.innerHTML = `<h3 class="panel-head">Jouw records</h3>
     <div class="records">${rows.map(([l, v]) =>
@@ -1028,25 +1081,73 @@ function wieBenIk() {
 function renderDuo() {
   const el = $("duoSwitch");
   if (!el) return;
+  /* Eén keer opbouwen: zo blijft de knop onder je vinger staan, ook tijdens het tikken. */
+  if (!el.dataset.klaar) {
+    el.dataset.klaar = "1";
+    el.innerHTML = ["Bart", "Michael"].map((naam) => `<button type="button" class="duo-btn" data-wie="${naam}">${naam}</button>`).join("");
+    el.addEventListener("click", (e) => {
+      const knop = e.target.closest(".duo-btn");
+      if (!knop) return;
+      try { localStorage.setItem(WIE_KEY, knop.dataset.wie); } catch {}
+      renderDuo();
+      renderGreeting();
+    });
+  }
   const wie = wieBenIk();
-  el.innerHTML = `<span class="duo-label">Ik ben</span>` + [["Bart", "🎽"], ["Michael", "🏃‍♂️"]].map(([naam, icoon]) =>
-    `<button type="button" class="duo-btn ${wie === naam ? "is-on" : ""}" data-wie="${naam}" aria-pressed="${wie === naam}">${icoon} ${naam}</button>`).join("");
-  el.querySelectorAll(".duo-btn").forEach((b) => b.addEventListener("click", () => {
-    const nieuw = wieBenIk() === b.dataset.wie ? "" : b.dataset.wie;
-    try { if (nieuw) localStorage.setItem(WIE_KEY, nieuw); else localStorage.removeItem(WIE_KEY); } catch {}
-    renderGreeting();
-    renderDuo();
-  }));
+  el.querySelectorAll(".duo-btn").forEach((b) => {
+    const aan = b.dataset.wie === wie;
+    b.classList.toggle("is-on", aan);
+    b.setAttribute("aria-pressed", String(aan));
+  });
 }
 function duoBlok(s) {
   if (!s.bart && !s.michael) return "";
   const wie = wieBenIk();
-  const rijen = [["Bart", "🎽 Pacer", s.bart], ["Michael", "🏃‍♂️ Volger", s.michael]].filter((r) => r[2]);
+  const rijen = [["Bart", s.bart], ["Michael", s.michael]].filter((r) => r[1]);
   if (wie === "Michael") rijen.reverse();
   return `<section class="detail-block duo-block">
       <h4>Zo doen jullie dit samen</h4>
-      ${rijen.map(([naam, rol, tekst]) => `<div class="duo-row ${wie === naam ? "is-me" : ""}"><span class="duo-who">${rol === "🎽 Pacer" ? "🎽" : "🏃‍♂️"} ${naam}</span><p>${tekst}</p></div>`).join("")}
+      ${rijen.map(([naam, tekst]) => `<div class="duo-row ${wie === naam ? "is-me" : ""}"><span class="duo-who">${naam}</span><p>${tekst}</p></div>`).join("")}
     </section>`;
+}
+
+/* ----- Tips ---------------------------------------------------------- */
+const WEEK_TIPS = {
+  1: "Laat je horloge deze week thuis. Loop op gevoel, dan herstel je echt.",
+  2: "Zet je drie trainingen nu al vast in de agenda. Vaste momenten houden je de hele winter op koers.",
+  3: "Bruggen zijn de heuvels van Rotterdam. Omhoog korte passen en armen mee, omlaag rustig.",
+  4: "Een rustweek is geen gemiste week. Slaap een uur extra als het kan, dat doet meer dan een extra kilometer.",
+  5: "Bij intervallen telt het laatste blok. Is dat het langzaamste, dan begon je te hard.",
+  6: "Je eerste 20 km begint zaterdagavond: goed eten, genoeg drinken en op tijd naar bed.",
+  7: "Leer 4:58 op gevoel: loop een kilometer zonder op je horloge te kijken, raad je tijd en check hem daarna.",
+  8: "Donker en koud? Neem een lampje en reflectie mee, en trek een laag minder aan dan je denkt. Na 10 minuten heb je het warm.",
+  9: "Test op je 24 km welke gel je maag aankan. Neem hem op tijd, niet pas als je leeg bent.",
+  10: "Kies voor de tijdrit een vlak stuk met weinig wind, en doe de twee dagen ervoor geen krachttraining.",
+  11: "Drinken op tempo is een vaardigheid. Knijp de beker tot een tuitje en neem kleine slokjes.",
+  12: "Test nu je raceset, sokken inclusief. Wat op 15 km niet schuurt, kan dat op 35 km wel doen.",
+  13: "Na km 25 wordt het mentaal. Hak het in stukjes: alleen de volgende kilometer telt.",
+  14: "Even eerlijk checken: hoe zijn de benen, hoe slaap je, wat doet de kniepees? Bijsturen kan nu nog makkelijk.",
+  15: "De zwaarste week. Eet binnen een half uur na de lange loop koolhydraten en eiwit, dan begint je herstel meteen.",
+  16: "Een lichtere week, ook voor Bart. Gebruik hem om fris aan de CPC te beginnen.",
+  17: "De CPC is je generale: hetzelfde ontbijt, dezelfde gels en dezelfde schoenen als straks. Niets nieuws.",
+  18: "Na deze 32 km is het grootste werk gedaan. Vanaf nu gaat het vooral om fris worden.",
+  19: "Afbouwen voelt raar. Zware benen en onrust horen erbij, je hebt niets verloren.",
+  20: "Regel nu de praktische dingen: startbewijs, vervoer naar de start en kleding voor elk weer.",
+  21: "Knip je teennagels, leg zaterdag alles klaar en loop de eerste kilometer langzamer dan je wil.",
+};
+const ZONE_TIPS = {
+  herstel: ["Echt langzaam, ook als het te makkelijk voelt.", "Hoe zwaarder je vorige training, hoe rustiger vandaag.", "Zeurt er iets? Korter mag altijd."],
+  duur: ["Doe de praattest: hele zinnen moeten kunnen.", "Ontspan je handen en schouders, dat scheelt energie.", "Liever korte, lichte passen dan lange stappen."],
+  lang: ["De eerste 3 km extra rustig, dan gaat de rest vanzelf.", "Begin na 45 minuten met eten, niet pas als je honger hebt.", "Plan een route met water onderweg, of neem een bidon mee."],
+  doel: ["Kijk pas na een kilometer op je horloge en leer het gevoel.", "Vlak is de kunst: elke kilometer binnen 3 seconden van 4:58.", "Oefen eten en drinken op dit tempo, net als in de race."],
+  tempo: ["Begin beheerst: je laatste blok moet net zo snel zijn als je eerste.", "Korte zinnen moeten nog net lukken.", "Tussen de blokken rustig blijven joggen, niet stilstaan."],
+  interval: ["Goed inlopen en een paar versnellingen voorkomen blessures.", "Op elk blok hetzelfde tempo, nooit sprinten.", "Bergop kort en krachtig, bergaf rustig. Fijn voor de kniepees."],
+};
+function renderTip() {
+  const el = $("tipCard");
+  if (!el) return;
+  const cw = currentWeek();
+  el.innerHTML = `<span class="tip-label">Tip van week ${cw}</span><p>${WEEK_TIPS[cw] || ""}</p>`;
 }
 
 /* ----- Racedashboard ------------------------------------------------- */
@@ -1055,20 +1156,22 @@ function renderDash() {
   const el = $("dashDays");
   if (!el) return;
   const dagen = Math.round((new Date(MARATHON_DAG()).setHours(0, 0, 0, 0) - new Date().setHours(0, 0, 0, 0)) / 864e5);
-  el.textContent = dagen > 0 ? String(dagen) : dagen === 0 ? "Nu!" : "🏅";
+  el.textContent = dagen > 0 ? String(dagen) : dagen === 0 ? "Nu!" : "✓";
   $("dashDaysLabel").textContent = dagen > 1 ? "dagen tot Rotterdam" : dagen === 1 ? "dag tot Rotterdam" : dagen === 0 ? "het is zover" : "Rotterdam gelopen";
+  $("dashWeeks").textContent = String(PLAN.length);
+  $("dashKm").textContent = String(Math.round(flatSessions.reduce((n, x) => n + x.km, 0)));
 }
 
 /* ----- Route naar Rotterdam: fases en ijkpunten ---------------------- */
 const IJKPUNTEN = [
-  { week: 3,  event: true, icon: "🏋️", naam: "HYROX Utrecht",     wanneer: "maandag 30 november", doel: "Michael" },
-  { week: 6,  day: "d3", icon: "🎉", naam: "Eerste 20 km",       doel: "Rustig, op praattempo" },
-  { week: 10, day: "d3", icon: "⏱️", naam: "10 km tijdrit",      doel: "Onder 46:00" },
-  { week: 13, day: "d3", icon: "🎉", naam: "Eerste 30 km",       doel: "Blijven lopen na km 25" },
-  { week: 16, event: true, icon: "🏋️", naam: "HYROX solo Mechelen", wanneer: "zaterdag 6 maart", doel: "Michael" },
-  { week: 17, day: "zo", icon: "🎯", naam: "CPC Den Haag",       doel: "Onder 1:40" },
-  { week: 18, day: "d3", icon: "🔥", naam: "De generale",        doel: "32 km, laatste 12 op 4:58" },
-  { week: 21, day: "zo", icon: "🏁", naam: "Marathon Rotterdam", doel: "Samen onder 3:30" },
+  { week: 3,  event: true, kort: "H", naam: "HYROX Utrecht", wanneer: "maandag 30 november", doel: "Michael" },
+  { week: 6,  day: "d3", kort: "20", naam: "Eerste 20 km", doel: "Rustig, op praattempo" },
+  { week: 10, day: "d3", kort: "10", naam: "10 km tijdrit", doel: "Onder 46:00" },
+  { week: 13, day: "d3", kort: "30", naam: "Eerste 30 km", doel: "Door na km 25" },
+  { week: 16, event: true, kort: "H", naam: "HYROX solo Mechelen", wanneer: "zaterdag 6 maart", doel: "Michael" },
+  { week: 17, day: "zo", kort: "21", naam: "CPC Den Haag", doel: "Onder 1:40" },
+  { week: 18, day: "d3", kort: "32", naam: "De generale", doel: "Laatste 12 op 4:58" },
+  { week: 21, day: "zo", kort: "42", naam: "Marathon Rotterdam", doel: "Samen onder 3:30" },
 ];
 function renderRoute() {
   const bar = $("routeBar"), lijst = $("routeList");
@@ -1093,7 +1196,7 @@ function renderRoute() {
   let volgendeGezet = false;
   lijst.innerHTML = IJKPUNTEN.map((p) => {
     if (p.event) return `<div class="route-point is-event">
-        <span class="route-dot">${p.icon}</span>
+        <span class="route-dot">${p.kort}</span>
         <span class="route-text"><strong>${p.naam}</strong><small>${p.wanneer}</small></span>
         <span class="route-goal">${p.doel}</span>
       </div>`;
@@ -1103,7 +1206,7 @@ function renderRoute() {
     const dag = /^d\d+$/.test(p.day) ? dateAtDay((p.week - 1) * 7) : sessionDate(p.week, p.day);
     const wanneer = `${/^d\d+$/.test(p.day) ? "week van " : "zondag "}${dag.getDate()} ${NL_MAAND[dag.getMonth()]}`;
     return `<button type="button" class="route-point ${e.done ? "is-done" : ""} ${isVolgende ? "is-next" : ""}" data-week="${p.week}" data-day="${p.day}">
-        <span class="route-dot">${e.done ? "✓" : p.icon}</span>
+        <span class="route-dot">${e.done ? "✓" : p.kort}</span>
         <span class="route-text"><strong>${p.naam}</strong><small>${wanneer}</small></span>
         <span class="route-goal">${e.done && parseTime(e.time) ? `<b>${fmtTijd(parseTime(e.time))}</b>` : p.doel}</span>
       </button>`;
@@ -1133,6 +1236,7 @@ function renderAll() {
   renderHero(stats);
   renderDuo();
   renderDash();
+  renderTip();
   renderRoute();
   renderPaceCard();
   renderStats(stats);
@@ -1193,6 +1297,11 @@ function openDetail(week, day) {
       <h4>Opbouw</h4>
       <ol class="block-list">${s.blocks.map((b) => `<li>${b}</li>`).join("")}</ol>
     </section>
+
+    ${isRaceDetail ? "" : `<section class="detail-block tips-block">
+      <h4>Zo haal je er het meeste uit</h4>
+      <ul>${(ZONE_TIPS[s.zone] || []).map((t) => `<li>${t}</li>`).join("")}</ul>
+    </section>`}
 
     <section class="detail-block">
       <h4>${isRaceDetail ? (s.kind === "Testloop" ? "Invullen na je testloop" : w.finish ? "Invullen na je mijlpaal" : "Invullen na de wedstrijd") : "Invullen na de training"}</h4>
@@ -1482,7 +1591,7 @@ function calendarFile() {
   if (wieBenIk() !== "Bart") PLAN.filter((w) => w.event).forEach((w) => {
     const d = sessionDate(w.week, w.event.day);
     lines.push("BEGIN:VEVENT", `UID:event-w${w.week}-${icsDay(d)}@bartlopen.nl`, `DTSTAMP:${stamp}`, `DTSTART;VALUE=DATE:${icsDay(d)}`, `DTEND;VALUE=DATE:${icsDay(addDays(d, 1))}`,
-      `SUMMARY:${icsEscape(`🏋️ ${w.event.titel} (Michael)`)}`, `DESCRIPTION:${icsEscape(w.event.tekst)}`, "TRANSP:TRANSPARENT", "END:VEVENT");
+      `SUMMARY:${icsEscape(`${w.event.titel} (Michael)`)}`, `DESCRIPTION:${icsEscape(w.event.tekst)}`, "TRANSP:TRANSPARENT", "END:VEVENT");
   });
   lines.push("END:VCALENDAR");
   return `${lines.join("\r\n")}\r\n`;
