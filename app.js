@@ -142,20 +142,20 @@ const PLAN = [
       "Rustig uitlopen tot 8 km",
     ] }),
     d2({ zone: "duur", km: 9, title: "Rustig doorlopen", goal: "Basis", blocks: ["9 km op 5:40–6:10/km"] }),
-    d3({ zone: "lang", km: 14, title: "Lange loop", goal: "Tijd op de benen", blocks: ["14 km op 5:35–6:10/km"] }),
+    d3({ zone: "lang", km: 14, title: "Lange loop", goal: "Tijd op de benen", blocks: ["14 km op 5:35–6:10/km"], bart: "Deze loop je alleen: maandag is Michaels Hyrox in Utrecht.", michael: "Deze sla je over, maandag is jouw Hyrox in Utrecht. Maximaal 20 minuten heel rustig losjes als je wilt." }),
   ]},
-  { week: 3, dates: "30 nov–6 dec", phase: "Fase 1 · Terugkomen en basis", note: "Eerste heuvels en eerste tempo. Heuveltraining is krachttraining op hardloopschoenen, en de Erasmusbrug komt er vanzelf aan.", sessions: [
+  { week: 3, dates: "30 nov–6 dec", phase: "Fase 1 · Terugkomen en basis", event: { day: "ma", titel: "HYROX Utrecht", wanneer: "maandag 30 november", tekst: "Michael doet maandag Hyrox. De dag erna rust of heel rustig, en donderdag op gevoel." }, note: "Eerste heuvels en eerste tempo. Heuveltraining is krachttraining op hardloopschoenen, en de Erasmusbrug komt er vanzelf aan.", sessions: [
     d1({ zone: "interval", kind: "Heuvels", km: 9, title: "8× de brug op", goal: "Kracht in de benen", why: "Heuvels maken je sterker en je looppas krachtiger, zonder de harde klappen van snelheid op de vlakte. In Rotterdam zijn bruggen de heuvels: kies een brug of viaduct van 45 tot 60 seconden.", blocks: [
       "2,5 km rustig inlopen",
       "8× 1 min stevig omhoog, rustig terug naar beneden",
       "Rustig uitlopen tot 9 km",
       "Michael: bergaf extra rustig, dat scheelt je kniepees",
-    ] }),
+    ], michael: "De dag na je Hyrox: geen heuvels. Rust, of 5 km heel rustig als het goed voelt." }),
     d2({ zone: "tempo", km: 10, title: "2× 10 min tempo", goal: "Duurvermogen omhoog", blocks: [
       "2,5 km rustig inlopen",
       "2× 10 min op 4:35–4:45/km, met 3 min rustig ertussen",
       "Rustig uitlopen tot 10 km",
-    ], bart: "Jij bepaalt het tempo: 4:40 op je horloge, half stapje voor Michael.", michael: "Niet op je horloge kijken, volg Bart. Zeg het als het te hard gaat." }),
+    ], bart: "Jij bepaalt het tempo: 4:40 op je horloge, half stapje voor Michael.", michael: "Drie dagen na je Hyrox. Zijn de benen nog zwaar? Dan 8 km rustig. Voelt het goed, volg dan Bart en kijk niet op je horloge." }),
     d3({ zone: "lang", km: 16, title: "Lange loop", goal: "Tijd op de benen", blocks: ["16 km op 5:35–6:10/km", "Neem drinken mee"] }),
   ]},
   { week: 4, dates: "7–13 dec", phase: "Fase 1 · Terugkomen en basis", recovery: true, note: "Rustweek. Korter en lichter, zodat de eerste drie weken kunnen landen.", sessions: [
@@ -217,18 +217,19 @@ const PLAN = [
     d2({ zone: "tempo", km: 10, title: "2× 10 min tempo", goal: "Scherp blijven", blocks: ["2,5 km rustig inlopen", "2× 10 min op 4:35–4:45/km, met 3 min rustig ertussen", "Rustig uitlopen tot 10 km"] }),
     d3({ zone: "lang", km: 20, title: "Ontspannen lange loop", goal: "Korter, en lekker genieten", blocks: ["20 km op 5:35–6:10/km"] }),
   ]},
-  { week: 15, dates: "22–28 feb", phase: "Fase 3 · Marathonspecifiek", note: "De grootste trainingsweek van het blok: ruim 60 km op drie lopen.", sessions: [
+  { week: 15, dates: "22–28 feb", phase: "Fase 3 · Marathonspecifiek", note: "De grootste week van het blok: ruim 60 km op drie lopen, met zondag de langste loop van de hele voorbereiding.", sessions: [
     d1({ zone: "interval", km: 13, title: "4× 1,6 km", goal: "De mijl op kracht", blocks: ["2,5 km rustig inlopen", "4× 1,6 km op 4:25–4:35/km, met 3 min joggen ertussen", "Rustig uitlopen tot 13 km"] }),
     d2({ zone: "doel", km: 16, title: "12 km racetempo", goal: "Twaalf kilometer op 4:58", blocks: ["2 km rustig inlopen", "12 km op 4:55–5:00/km", "Rustig uitlopen tot 16 km"], bart: "Zo vlak als je kunt: 59:36 over de 12. Neem je racegel mee en oefen het moment.", michael: "Dit is de training die je vertrouwen geeft. Voelt het beheerst? Dan ben je op schema." }),
-    d3({ zone: "lang", km: 32, title: "Lange loop: 32 km", goal: "De echte afstand komt in zicht", blocks: ["32 km op 5:35–6:10/km", "Gel om de 35 min, oefen precies je racedag-eten"] }),
+    d3({ zone: "lang", km: 33, title: "🎉 33 km, de langste", goal: "De piek van jullie blok", why: "Dit is de langste loop van jullie voorbereiding. Hij staat bewust hier: zes dagen voor Michaels Hyrox in Mechelen, zodat er daarna nog ruimte is om te herstellen. Verder hoeft niet: de rest komt op de racedag.", blocks: ["33 km op 5:35–6:10/km", "Gel om de 35 min, drinken bij elke kans", "Kleding en schoenen van de racedag aan"], bart: "Hou het rustig, ook als het lekker gaat. Na km 25 is het jouw moment als pacer.", michael: "Kniepees checken: napijn de volgende ochtend? Laat het direct weten. Daarna gaat alles richting Mechelen." }),
   ]},
-  { week: 16, dates: "1–7 mrt", phase: "Fase 3 · Marathonspecifiek", note: "Zondag de langste loop van het hele blok. Daarna is het zwaarste achter de rug.", sessions: [
-    d1({ zone: "tempo", km: 13, title: "3× 3 km tempo", goal: "Drempel op zijn scherpst", blocks: ["2 km rustig inlopen", "3× 3 km op 4:35–4:45/km, met 2,5 min rustig ertussen", "Rustig uitlopen tot 13 km"] }),
-    d2({ zone: "doel", km: 14, title: "8 km racetempo", goal: "Vertrouwd tempo", blocks: ["3 km rustig inlopen", "8 km op 4:55–5:00/km", "Rustig uitlopen tot 14 km"] }),
-    d3({ zone: "lang", km: 33, title: "🎉 33 km, de langste", goal: "De piek van jullie blok", why: "Dit is de langste loop van jullie voorbereiding. Verder hoeft niet: de rest komt op de racedag van de frisheid die jullie in de afbouw opsparen.", blocks: ["33 km op 5:35–6:10/km", "Gel om de 35 min, drinken bij elke kans", "Kleding en schoenen van de racedag aan"], bart: "Jij draagt de spullen en houdt het ritme. Hou het rustig, ook als het lekker gaat.", michael: "Kniepees checken: napijn de volgende ochtend? Laat het direct weten." }),
+  { week: 16, dates: "1–7 mrt", phase: "Fase 3 · Marathonspecifiek", event: { day: "za", titel: "HYROX solo Mechelen", wanneer: "zaterdag 6 maart", tekst: "Michael doet Hyrox solo in België. Daarom is deze week voor jullie allebei lichter. Zondag rust voor Michael." }, note: "Lichtere week na de piek. Michael richt zich op zaterdag, Bart houdt de kilometers vast.", sessions: [
+    d1({ zone: "tempo", km: 10, title: "2× 10 min tempo", goal: "Scherp blijven, niet moe worden", blocks: ["2,5 km rustig inlopen", "2× 10 min op 4:35–4:45/km, met 3 min rustig ertussen", "Rustig uitlopen tot 10 km"], michael: "Op dinsdag kan dit nog, maar stop als de 33 km van zondag nog in je benen zit." }),
+    d2({ zone: "doel", km: 10, title: "4 km racetempo", goal: "Even voelen", blocks: ["3 km rustig inlopen", "4 km op 4:55–5:00/km", "Rustig uitlopen tot 10 km"], michael: "Twee dagen voor je Hyrox: doe 5 km heel rustig met een paar versnellingen." }),
+    d3({ zone: "lang", km: 20, title: "Ontspannen lange loop", goal: "Bart loopt, Michael rust", blocks: ["20 km op 5:35–6:10/km"], bart: "Deze loop je alleen. Kijk zondag even hoe Michael erbij loopt, volgende week is de CPC.", michael: "De dag na je Hyrox. Rust, of maximaal 5 km heel rustig als het echt goed voelt. Niet meer." }),
   ]},
+
   { week: 17, dates: "8–14 mrt", phase: "Fase 3 · Marathonspecifiek", tuneup: true, tuneupTag: "CPC", raceLabel: "🎯 IJkpunt · CPC halve marathon", raceSub: "CPC Den Haag · doel onder 1:40", note: "CPC-week! Vier weken voor Rotterdam de perfecte generale, met startnummer en alles erop en eraan.", sessions: [
-    d1({ zone: "duur", km: 9, title: "Rustig met 4 versnellingen", goal: "Fris naar de CPC", blocks: ["8,5 km op 5:40–6:10/km", "4× 20 sec soepel versnellen"] }),
+    d1({ zone: "duur", km: 9, title: "Rustig met 4 versnellingen", goal: "Fris naar de CPC", blocks: ["8,5 km op 5:40–6:10/km", "4× 20 sec soepel versnellen"], michael: "Drie dagen na je Hyrox: zijn de benen nog zwaar, dan alleen 6 km heel rustig." }),
     d2({ zone: "doel", km: 8, title: "3× 1 km racetempo", goal: "Even voelen, verder niets", blocks: ["3 km rustig inlopen", "3× 1 km op 4:55–5:00/km, met 2 min rustig ertussen", "Rustig uitlopen tot 8 km"] }),
     zo({ zone: "doel", km: 21.1, kind: "Wedstrijd", title: "🎯 CPC Loop Den Haag", goal: "Zondag 14 maart · onder de 1:40", why: "De belangrijkste test van het blok. 1:40 is 4:44 per km en past bij een marathon rond 3:30. Lukt dit, dan is 3:30 in Rotterdam echt haalbaar. Oefen ook alles van de racedag: ontbijt, gels, kleding en de startvak-routine.", blocks: [
       "Rustig inlopen, 10 min plus een paar versnellingen",
@@ -236,7 +237,7 @@ const PLAN = [
       "Dan op 4:42–4:45/km tot km 18",
       "Laatste 3 km: alles wat over is",
       "Controleer of je startbewijs geregeld is, de inschrijving is al open",
-    ], bart: "Jouw generale als pacer: vlak lopen door de drukte, splits doorgeven, drinkposten oefenen.", michael: "Volg Bart tot km 18, dan mag je los. Onder 1:40? Dan ligt 3:30 voor het oprapen." }),
+    ], bart: "Jouw generale als pacer: vlak lopen door de drukte, splits doorgeven, drinkposten oefenen.", michael: "Dit is acht dagen na je Hyrox. Volg Bart tot km 18, dan mag je los. Onder 1:40 is top. Net erboven met Hyrox in de benen zegt nog niets over Rotterdam." }),
   ]},
   { week: 18, dates: "15–21 mrt", phase: "Fase 3 · Marathonspecifiek", note: "De laatste grote: 32 km met 12 km op racetempo. Hierna begint het afbouwen.", sessions: [
     d1({ zone: "herstel", km: 8, title: "Heel rustig na de CPC", goal: "Bijkomen", blocks: ["8 km langzamer dan 6:15/km"] }),
@@ -293,7 +294,7 @@ const INFO = [
   ]},
   { icon: "🧭", title: "De ijkpunten", items: [
     "10 km tijdrit in de week van 18 januari: onder 46:00 is op schema.",
-    "CPC Den Haag op zondag 14 maart: onder 1:40 is op schema. Regel je startbewijs, de inschrijving is open.",
+    "CPC Den Haag op zondag 14 maart: onder 1:40 is op schema. Voor Michael is dat acht dagen na zijn Hyrox, dus reken dat mee. Regel je startbewijs, de inschrijving is open.",
     "De generale in de week van 15 maart: 32 km met de laatste 12 op 4:58.",
     "Haalt Michael deze drie, dan is 3:30 geen hoop meer maar een plan.",
     "Lukt het net niet? Dan is 3:33 ook een dikke PR. Beslis samen na de CPC op welk tempo jullie vertrekken.",
@@ -303,6 +304,12 @@ const INFO = [
     "2 à 3× per week zwaar en langzaam: leg extension of split squat. Voer het gewicht rustig op.",
     "Bergaf en bruggen af altijd rustig, ook in de heuveltraining.",
     "Napijn de volgende ochtend die toeneemt? Rustiger of korter, en laat het Bart weten. Liever een training minder dan een blessure in maart.",
+  ]},
+  { icon: "🏋️", title: "Michael: Hyrox naast de marathon", items: [
+    "Maandag 30 november HYROX Utrecht en zaterdag 6 maart HYROX solo in Mechelen. De trainingen eromheen hebben een eigen stukje voor jou.",
+    "Hyrox is zwaarder dan het lijkt: 8 km lopen plus lunges, sleds en wall balls. Reken op een paar dagen herstel.",
+    "Die lunges en wall balls vragen veel van je kniepees. Bouw ze rustig op in de weken ervoor en let op de ochtend erna.",
+    "Eerlijk: Mechelen, de CPC en de generale liggen binnen 15 dagen, vijf weken voor Rotterdam. Dat is het spannendste stuk van het schema. Doe Mechelen liever op 90% en bewaar de rest voor 11 april.",
   ]},
   { icon: "💪", title: "Kracht naast drie keer lopen", items: [
     "Met drie looptrainingen is er ruimte voor 1 à 2× kracht per week: squats, lunges, kuiten, heupen en core.",
@@ -823,6 +830,7 @@ function renderWeeks() {
           ${w.week === cw ? `<span class="week-tag tag-now">Nu</span>` : w.week < cw ? (w.sessions.every((x) => log[sid(w.week, x.day)]?.done) ? `<span class="week-tag tag-done">✓ af</span>` : `<span class="week-tag tag-missed">gemist</span>`) : tagOf(w)}
         </header>
         ${planStrip}
+        ${w.event ? `<div class="week-event"><strong>🏋️ Michael · ${w.event.titel}</strong><span>${w.event.wanneer}</span><p>${w.event.tekst}</p></div>` : ""}
         ${w.note ? `<p class="week-note">${w.note}</p>` : ""}
         <div class="session-list">${sess}</div>
       </article>`;
@@ -1053,9 +1061,11 @@ function renderDash() {
 
 /* ----- Route naar Rotterdam: fases en ijkpunten ---------------------- */
 const IJKPUNTEN = [
+  { week: 3,  event: true, icon: "🏋️", naam: "HYROX Utrecht",     wanneer: "maandag 30 november", doel: "Michael" },
   { week: 6,  day: "d3", icon: "🎉", naam: "Eerste 20 km",       doel: "Rustig, op praattempo" },
   { week: 10, day: "d3", icon: "⏱️", naam: "10 km tijdrit",      doel: "Onder 46:00" },
   { week: 13, day: "d3", icon: "🎉", naam: "Eerste 30 km",       doel: "Blijven lopen na km 25" },
+  { week: 16, event: true, icon: "🏋️", naam: "HYROX solo Mechelen", wanneer: "zaterdag 6 maart", doel: "Michael" },
   { week: 17, day: "zo", icon: "🎯", naam: "CPC Den Haag",       doel: "Onder 1:40" },
   { week: 18, day: "d3", icon: "🔥", naam: "De generale",        doel: "32 km, laatste 12 op 4:58" },
   { week: 21, day: "zo", icon: "🏁", naam: "Marathon Rotterdam", doel: "Samen onder 3:30" },
@@ -1082,6 +1092,11 @@ function renderRoute() {
       : `${fases.find((f) => cw >= f.van && cw <= f.tot).naam} <em>week ${cw} van ${PLAN.length}</em>`}</p>`;
   let volgendeGezet = false;
   lijst.innerHTML = IJKPUNTEN.map((p) => {
+    if (p.event) return `<div class="route-point is-event">
+        <span class="route-dot">${p.icon}</span>
+        <span class="route-text"><strong>${p.naam}</strong><small>${p.wanneer}</small></span>
+        <span class="route-goal">${p.doel}</span>
+      </div>`;
     const e = log[sid(p.week, p.day)] || {};
     const isVolgende = !e.done && !volgendeGezet;
     if (isVolgende) volgendeGezet = true;
@@ -1463,6 +1478,11 @@ function calendarFile() {
       "TRANSP:TRANSPARENT",
       "END:VEVENT",
     );
+  });
+  if (wieBenIk() !== "Bart") PLAN.filter((w) => w.event).forEach((w) => {
+    const d = sessionDate(w.week, w.event.day);
+    lines.push("BEGIN:VEVENT", `UID:event-w${w.week}-${icsDay(d)}@bartlopen.nl`, `DTSTAMP:${stamp}`, `DTSTART;VALUE=DATE:${icsDay(d)}`, `DTEND;VALUE=DATE:${icsDay(addDays(d, 1))}`,
+      `SUMMARY:${icsEscape(`🏋️ ${w.event.titel} (Michael)`)}`, `DESCRIPTION:${icsEscape(w.event.tekst)}`, "TRANSP:TRANSPARENT", "END:VEVENT");
   });
   lines.push("END:VCALENDAR");
   return `${lines.join("\r\n")}\r\n`;
