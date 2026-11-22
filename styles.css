@@ -783,3 +783,10 @@ body.print-schema .naar-trainingen { display: none !important; }
 .chart:has(.bar:nth-child(24)) { gap: 3px; }
 .chart:has(.bar:nth-child(24)) .bar:nth-child(even) .bar-x { visibility: hidden; }
 .chart:has(.bar:nth-child(34)) { gap: 2px; }
+
+/* ----- Eenmalige splitsing: van wie zijn de vinkjes? ----- */
+.splitsing { margin-top: 12px; padding: 12px 13px; border: 1px solid color-mix(in srgb, var(--volt) 45%, transparent); border-radius: 16px; background: color-mix(in srgb, var(--volt) 10%, var(--card)); }
+.splitsing p { margin: 0 0 10px; color: var(--muted); font-size: 0.82rem; line-height: 1.4; }
+.splitsing p strong { display: block; margin-bottom: 2px; color: var(--ink); font-size: 0.9rem; }
+.splitsing-knoppen { display: flex; gap: 8px; }
+

@@ -32,7 +32,15 @@ const CONFIG = {
 const RUNNER = CONFIG.runner;
 const GOAL = CONFIG.goal;
 const START_DATE = CONFIG.startDate;
-const STORE_KEY = CONFIG.storeKey;
+/* Bart en Michael hebben ieder hun eigen voortgang. Tot 22 nov 2026 was er één
+   gedeelde sleutel (CONFIG.storeKey); die blijft staan tot iemand kiest van wie die vinkjes zijn. */
+const GEDEELDE_KEY = CONFIG.storeKey;
+function persoonsKey() {
+  let wie = "";
+  try { wie = localStorage.getItem("rotterdam330.wie") || ""; } catch {}
+  return wie ? `rotterdam330.log.${wie.toLowerCase()}` : GEDEELDE_KEY;
+}
+let STORE_KEY = persoonsKey();
 const TOTAL_WEEKS = 21;
 const UNIT = CONFIG.unit === "min" ? "min" : "km";
 const UNIT_LABEL = UNIT;
@@ -290,6 +298,7 @@ const INFO = [
     "De dagen zijn flexibel, maar houd minstens één dag tussen de trainingen. De lange loop past het best op zondag, net als de race.",
     "Samen lopen is mooi voor de sleuteltrainingen. Lukt dat een keer niet, dan loopt ieder voor zich op hetzelfde tempo.",
     "Elke training heeft een eigen stukje voor Bart en voor Michael. Kies bovenaan de app wie jij bent, dan staat jouw taak vooraan.",
+    "Ieder houdt zijn eigen voortgang bij. Je vinkjes staan op je eigen telefoon, dus de ander ziet ze niet. Wil je laten zien hoe het gaat? Stuur een screenshot of je tijd. 😉",
     "Moet een week anders? Zet het in jullie planning. Rotterdam schuift natuurlijk niet mee, dus gebruik de schuifknop liever niet.",
   ]},
   { icon: "🧭", title: "De ijkpunten", items: [
@@ -429,7 +438,7 @@ function loadLog() {
 function saveLog() {
   log.__saved = Date.now();
   try { localStorage.setItem(STORE_KEY, JSON.stringify(log)); } catch {}
-  idbZet(log);
+  idbZet(log, STORE_KEY);
   renderLaatstOpgeslagen();
 }
 
@@ -449,37 +458,42 @@ function idbOpen() {
     r.onerror = () => nee(r.error);
   });
 }
-async function idbZet(data) {
+async function idbZet(data, sleutel = STORE_KEY) {
+  /* De sleutel wordt vastgelegd bij het aanroepen: wisselt iemand intussen
+     van Bart naar Michael, dan belandt deze back-up toch bij de juiste persoon. */
   try {
     const db = await idbOpen();
     await new Promise((ok, nee) => {
       const t = db.transaction(IDB_STORE, "readwrite");
-      t.objectStore(IDB_STORE).put(JSON.parse(JSON.stringify(data)), STORE_KEY);
+      t.objectStore(IDB_STORE).put(JSON.parse(JSON.stringify(data)), sleutel);
       t.oncomplete = ok; t.onerror = () => nee(t.error);
     });
   } catch {}
 }
-async function idbHaal() {
+async function idbHaal(sleutel = STORE_KEY) {
   try {
     const db = await idbOpen();
     return await new Promise((ok, nee) => {
       const t = db.transaction(IDB_STORE, "readonly");
-      const q = t.objectStore(IDB_STORE).get(STORE_KEY);
+      const q = t.objectStore(IDB_STORE).get(sleutel);
       q.onsuccess = () => ok(q.result || null);
       q.onerror = () => nee(q.error);
     });
   } catch { return null; }
 }
 function herstelUitBackup() {
-  return idbHaal().then((kopie) => {
-    if (!kopie) { idbZet(log); return false; }
+  const sleutel = STORE_KEY;
+  return idbHaal(sleutel).then((kopie) => {
+    /* Intussen van persoon gewisseld? Dan hoort deze kopie niet bij het huidige logboek. */
+    if (sleutel !== STORE_KEY) return false;
+    if (!kopie) { idbZet(log, sleutel); return false; }
     if (aantalSessies(kopie) > aantalSessies(log)) {
       log = samenvoegen(log, kopie);
       saveLog(); renderAll();
       toast("Je voortgang is teruggehaald 🔄");
       return true;
     }
-    idbZet(log);
+    idbZet(log, sleutel);
     return false;
   }).catch(() => false);
 }
@@ -1126,6 +1140,10 @@ function renderDuo() {
       const michael = el.querySelector('[data-wie="Michael"]');
       const knop = e.target.closest(".duo-btn") || (e.clientX < michael.getBoundingClientRect().left ? el.querySelector('[data-wie="Bart"]') : michael);
       try { localStorage.setItem(WIE_KEY, knop.dataset.wie); } catch {}
+      /* Andere persoon gekozen: zijn eigen voortgang laden. */
+      const vorige = STORE_KEY;
+      STORE_KEY = persoonsKey();
+      if (STORE_KEY !== vorige) { log = loadLog(); renderAll(); renderLaatstOpgeslagen(); herstelUitBackup(); return; }
       renderDuo();
       renderGreeting();
     });
@@ -1137,6 +1155,44 @@ function renderDuo() {
     b.setAttribute("aria-pressed", String(aan));
   });
 }
+/* Eenmalig: de vinkjes van vóór de splitsing aan de juiste persoon geven. */
+const SPLITSING_KEY = "rotterdam330.splitsing";
+function renderSplitsing() {
+  const duo = $("duoSwitch");
+  if (!duo) return;
+  let el = $("splitsing");
+  let klaar = "";
+  try { klaar = localStorage.getItem(SPLITSING_KEY) || ""; } catch {}
+  const n = aantalSessies(leesSleutel(GEDEELDE_KEY));
+  if (klaar || !n) { if (el) el.remove(); return; }
+  if (!el) {
+    el = document.createElement("div");
+    el.id = "splitsing";
+    el.className = "splitsing";
+    duo.insertAdjacentElement("afterend", el);
+    el.addEventListener("click", (e) => {
+      const b = e.target.closest("[data-van]");
+      if (b) splitsNaar(b.dataset.van);
+    });
+  }
+  el.innerHTML = `<p><strong>Nieuw: ieder zijn eigen voortgang 🙌</strong>Op deze telefoon staan al ${n} afgevinkte trainingen. Van wie zijn die?</p>` +
+    `<div class="splitsing-knoppen"><button type="button" class="duo-btn" data-van="Bart">🎽 Van Bart</button><button type="button" class="duo-btn" data-van="Michael">🏃‍♂️ Van Michael</button></div>`;
+}
+function splitsNaar(wie) {
+  const doel = `rotterdam330.log.${wie.toLowerCase()}`;
+  const samen = samenvoegen(leesSleutel(doel) || {}, leesSleutel(GEDEELDE_KEY) || {});
+  try {
+    localStorage.setItem(doel, JSON.stringify(samen));
+    localStorage.setItem(SPLITSING_KEY, wie);
+    localStorage.setItem(WIE_KEY, wie);
+  } catch {}
+  STORE_KEY = persoonsKey();
+  log = loadLog();
+  saveLog();
+  renderAll();
+  toast(`Klaar! Die trainingen staan nu bij ${wie} ✅`);
+}
+
 function duoBlok(s) {
   if (!s.bart && !s.michael) return "";
   const wie = wieBenIk();
@@ -1271,6 +1327,7 @@ function renderAll() {
   renderHero(stats);
   renderNaarTrainingen();
   renderDuo();
+  renderSplitsing();
   renderDash();
   renderTip();
   renderRoute();
