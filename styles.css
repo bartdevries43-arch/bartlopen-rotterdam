@@ -790,3 +790,200 @@ body.print-schema .naar-trainingen { display: none !important; }
 .splitsing p strong { display: block; margin-bottom: 2px; color: var(--ink); font-size: 0.9rem; }
 .splitsing-knoppen { display: flex; gap: 8px; }
 
+
+/* ================================================================== *
+ *  Design v6 · Rotterdam Magma
+ *  De originele bartlopen-kleuren (oranje, roze, paars uit het logo)
+ *  op warm pruim, met gloed in de achtergrond en een Erasmusbrug-skyline.
+ * ================================================================== */
+:root {
+  --bg-0: #160c14;
+  --bg-1: #22111d;
+  --card: rgba(46, 24, 39, 0.82);
+  --card-2: #3a2132;
+  --card-solid: #2e1827;
+  --line: rgba(255, 160, 200, 0.15);
+  --ink: #fff5f7;
+  --muted: #d6b9c6;
+
+  --magma: #ff7a2f;
+  --pastel-pink: #ff8a3d;
+  --pastel-purple: #d9a8ff;
+  --pastel-blue: #ff5c98;
+
+  --volt: #ff7a2f;
+  --volt-ink: #2a1004;
+  --flame: #ff2d78;
+  --azure: #ff5c98;
+  --violet: #b96bff;
+
+  --grad-magma: linear-gradient(120deg, #ffa046 0%, #ff7a2f 30%, #ff2d78 68%, #b96bff 100%);
+  --grad-warm: linear-gradient(120deg, #ff9a3d, #ff4f6d 60%, #ff2d78);
+
+  --z-herstel: #b59aa8;
+  --z-duur: #ffd23d;
+  --z-lang: #ff9a3d;
+  --z-opbouw: #f3a6c8;
+  --z-tempo: #ff4a3d;
+  --z-doel: #ff2d9a;
+  --z-interval: #b47bff;
+  --z-tienkm: #f6b98a;
+
+  --shadow-md: 0 18px 44px rgba(10, 2, 8, 0.5);
+}
+
+body {
+  background:
+    radial-gradient(90% 50% at 0% -6%, rgba(255, 122, 47, 0.42), transparent 62%),
+    radial-gradient(70% 46% at 104% 22%, rgba(255, 45, 120, 0.30), transparent 64%),
+    radial-gradient(80% 40% at 100% -4%, rgba(185, 107, 255, 0.22), transparent 60%),
+    radial-gradient(110% 55% at 10% 70%, rgba(255, 90, 77, 0.14), transparent 62%),
+    radial-gradient(120% 70% at 60% 118%, rgba(185, 107, 255, 0.30), transparent 62%),
+    linear-gradient(180deg, #2a1220 0%, var(--bg-1) 38%, var(--bg-0) 100%);
+  background-attachment: fixed;
+}
+
+/* Topbar: warme glasbalk, titel in de bartlopen-gradient */
+.topbar { background: linear-gradient(180deg, rgba(42, 18, 32, 0.92) 55%, rgba(42, 18, 32, 0)); }
+.kicker { color: #ffb08a; }
+.topbar h1 {
+  background: linear-gradient(100deg, #fff5f7 10%, #ffc39a 55%, #ff8fb6 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.icon-button { border-color: rgba(255, 160, 200, 0.22); background: linear-gradient(160deg, rgba(255, 140, 90, 0.20), rgba(255, 45, 120, 0.06)), var(--card-solid); }
+
+/* Hero: gradient-rand, warme gloed, skyline onderin */
+.hero {
+  border: 1.5px solid transparent;
+  padding-bottom: 78px;
+  background:
+    linear-gradient(150deg, rgba(255, 122, 47, 0.24), rgba(255, 45, 120, 0.10) 45%, rgba(185, 107, 255, 0.16) 100%) padding-box,
+    linear-gradient(var(--card-solid), var(--card-solid)) padding-box,
+    linear-gradient(140deg, rgba(255, 160, 80, 0.85), rgba(255, 45, 120, 0.55) 50%, rgba(185, 107, 255, 0.75)) border-box;
+  box-shadow: 0 22px 50px rgba(255, 45, 120, 0.16), 0 10px 30px rgba(10, 2, 8, 0.45);
+}
+.hero-glow { background: radial-gradient(circle, rgba(255, 45, 120, 0.50), rgba(255, 122, 47, 0.22) 38%, transparent 68%); }
+.hero::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 62px; pointer-events: none;
+  background: var(--grad-magma); opacity: 0.5;
+  -webkit-mask: url("skyline.svg") center bottom / 100% 100% no-repeat;
+  mask: url("skyline.svg") center bottom / 100% 100% no-repeat;
+}
+.hero::before {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 18px; pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(255, 122, 47, 0.10));
+}
+.brand-logo { box-shadow: 0 14px 34px rgba(255, 90, 60, 0.30), 0 0 0 1px rgba(255, 170, 120, 0.25); }
+.hero-kicker { color: #ff8fb6; }
+.hero h2 { color: #fff; }
+.hero-motto {
+  background: var(--grad-warm); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.ring-bg { stroke: rgba(255, 190, 210, 0.12); }
+.ring-fg { filter: drop-shadow(0 0 8px rgba(255, 90, 80, 0.55)); }
+.ring-label strong { color: #fff; }
+.hero-subgoal {
+  border-color: rgba(255, 150, 120, 0.32);
+  background: linear-gradient(100deg, rgba(255, 122, 47, 0.16), rgba(255, 45, 120, 0.12) 60%, rgba(185, 107, 255, 0.12));
+}
+.hero-subgoal span { color: #ffb08a; }
+.hero-subgoal strong { color: #fff; }
+
+/* Bart / Michael-knop */
+.duo-btn { background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 170, 200, 0.22); }
+.duo-btn.is-on {
+  background: var(--grad-warm); border-color: transparent; color: #fff;
+  text-shadow: 0 1px 2px rgba(80, 10, 30, 0.35);
+  box-shadow: 0 8px 22px rgba(255, 60, 90, 0.35);
+}
+
+/* Snelknop naar trainingen */
+.naar-trainingen {
+  border-color: rgba(255, 150, 110, 0.45);
+  background: linear-gradient(110deg, rgba(255, 122, 47, 0.26), rgba(255, 45, 120, 0.12) 55%, transparent 90%), var(--card-solid);
+}
+.naar-trainingen .nt-icoon { background: linear-gradient(145deg, rgba(255, 122, 47, 0.35), rgba(255, 45, 120, 0.25)); }
+.naar-trainingen .nt-pijl { background: var(--grad-warm); color: #fff; box-shadow: 0 6px 16px rgba(255, 60, 90, 0.4); }
+
+/* Racedashboard */
+.dash-tile { background: var(--card); border-color: var(--line); }
+.dash-tile.is-main {
+  position: relative; overflow: hidden; border-color: transparent; color: #fff;
+  background: linear-gradient(150deg, #ff9a3d 0%, #ff6a3d 40%, #ff2d78 100%);
+  box-shadow: 0 14px 30px rgba(255, 70, 80, 0.38);
+}
+.dash-tile.is-main::after { content: ""; position: absolute; right: -26px; top: -26px; width: 80px; height: 80px; border-radius: 50%; background: rgba(255, 255, 255, 0.16); pointer-events: none; }
+.dash-tile.is-main .dash-val { text-shadow: 0 2px 8px rgba(120, 20, 30, 0.3); }
+.dash-tile.is-main .dash-label { color: #fff; opacity: 0.92; }
+.dash-tile:nth-child(2) .dash-val { color: #ffb08a; }
+.dash-tile:nth-child(3) .dash-val { color: #ff8fb6; }
+
+/* Stats: elk getal een eigen warme tint met kleurstreep */
+.stat-tile { position: relative; overflow: hidden; background: var(--card); border-color: var(--line); }
+.stat-tile::before { content: ""; position: absolute; left: 18%; right: 18%; top: 0; height: 3px; border-radius: 0 0 4px 4px; background: var(--st, var(--volt)); }
+.stat-tile:nth-child(1) { --st: #ff9a3d; }
+.stat-tile:nth-child(2) { --st: #ff4f6d; }
+.stat-tile:nth-child(3) { --st: #ff2d78; }
+.stat-tile:nth-child(4) { --st: #c58bff; }
+.stat-tile .stat-val { color: var(--st) !important; }
+
+/* Kaarten en panelen: warm glas met een zacht lichtrandje bovenin */
+.panel, .week-card, .tip-card, .nextup-card {
+  background:
+    linear-gradient(180deg, rgba(255, 200, 220, 0.06), transparent 38%),
+    var(--card);
+  border-color: var(--line);
+}
+.nextup-card { background: linear-gradient(120deg, color-mix(in srgb, var(--zc, var(--volt)) 20%, transparent), transparent 62%), var(--card-solid); }
+.panel-head { color: #ffc39a; }
+.panel-head::before { content: ""; align-self: center; flex: none; width: 4px; height: 14px; border-radius: 4px; background: var(--grad-warm); }
+.tip-card { border-left: 4px solid #ff7a2f; }
+.tip-label { color: #ffb08a; }
+
+/* Fasekoppen in de bartlopen-gradient met lijntje */
+.phase-head {
+  display: flex; align-items: center; gap: 10px;
+  color: #ffc39a;
+}
+.phase-head::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, rgba(255, 140, 90, 0.55), rgba(255, 45, 120, 0.25), transparent); }
+.sub-phase { color: #ff8fb6; }
+
+/* Weken */
+.week-card.is-current {
+  border: 1.5px solid transparent;
+  background:
+    linear-gradient(180deg, rgba(255, 140, 90, 0.10), transparent 40%) padding-box,
+    linear-gradient(var(--card-solid), var(--card-solid)) padding-box,
+    var(--grad-magma) border-box;
+  box-shadow: 0 16px 40px rgba(255, 60, 100, 0.22), var(--shadow-md);
+}
+.week-card.is-tuneup-week::before,
+.week-card.is-goal-race-week::before { background: var(--grad-magma); }
+.week-planning span { border-color: rgba(217, 168, 255, 0.32); background: rgba(185, 107, 255, 0.12); color: #e6c6ff; }
+.session.is-race-session .session-day { background: var(--grad-magma); color: #fff; box-shadow: 0 8px 22px rgba(255, 60, 100, 0.3); }
+.session.is-today { box-shadow: inset 0 0 0 2px #ff7a2f; }
+
+/* Knoppen */
+.btn-primary { background: var(--grad-warm); color: #fff; text-shadow: 0 1px 2px rgba(80, 10, 30, 0.3); box-shadow: 0 10px 24px rgba(255, 60, 90, 0.3); }
+.btn-primary.is-done { background: linear-gradient(120deg, #c58bff, #ff8fb6); color: #2a0f24; text-shadow: none; }
+.session.is-done .session-check { background: var(--grad-warm); color: #fff; }
+
+/* Route, grafiek en racekaart */
+.route-seg span { background: var(--grad-warm); }
+.route-point.is-done .route-dot { background: var(--grad-warm); border-color: transparent; color: #fff; }
+.bar-fill { background: linear-gradient(180deg, #ffb36b, #ff6a3d 45%, #ff2d78 80%, #b96bff); }
+.bar.is-rest .bar-fill { background: linear-gradient(180deg, #b59aa8, #5a4250); }
+.bar.is-race .bar-fill { background: linear-gradient(180deg, #fff, #ff7a2f); }
+.bar-track { background: rgba(255, 190, 210, 0.12); }
+.info-title { color: #ffc39a; }
+.splitsing { border-color: rgba(255, 150, 110, 0.45); background: linear-gradient(110deg, rgba(255, 122, 47, 0.18), rgba(255, 45, 120, 0.08)), var(--card-solid); }
+
+@media (prefers-reduced-motion: reduce) { .hero-glow { animation: none; } }
+.splash {
+  background:
+    radial-gradient(90% 60% at 20% 20%, rgba(255, 122, 47, 0.38), transparent 60%),
+    radial-gradient(90% 60% at 85% 45%, rgba(255, 45, 120, 0.30), transparent 62%),
+    radial-gradient(100% 60% at 50% 110%, rgba(185, 107, 255, 0.30), transparent 62%),
+    linear-gradient(180deg, #2a1220, #160c14);
+}
+.splash-mark { background: var(--grad-magma); -webkit-background-clip: text; background-clip: text; filter: drop-shadow(0 8px 26px rgba(255, 70, 90, 0.45)); }

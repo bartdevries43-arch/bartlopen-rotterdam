@@ -1,10 +1,10 @@
 /* Eenvoudige offline-cache voor Run Coach. Verhoog CACHE bij elke update. */
-const CACHE = "runcoach-rotterdam-v5-splits";
+const CACHE = "runcoach-rotterdam-v6-magma";
 const ASSETS = [
   "./",
   "./index.html",
-  "./styles.css?v=5-splits",
-  "./app.js?v=5-splits",
+  "./styles.css?v=6-magma",
+  "./app.js?v=6-magma",
   "./coach.jpg",
   "./coach-logo.png",
   "./icon-192.png",
@@ -12,6 +12,7 @@ const ASSETS = [
   "./apple-touch-icon.png",
   "./bartlopen-runcoach.png",
   "./manifest.json",
+  "./skyline.svg",
 ];
 
 self.addEventListener("install", (e) => {
